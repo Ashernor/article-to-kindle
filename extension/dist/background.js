@@ -2513,6 +2513,7 @@ function slugifyFilename(title) {
 
 // extension/src/background.js
 var DEFAULTS = { kindleEmail: "", mode: "download", relayUrl: "", relayToken: "" };
+var HAS_DOWNLOADS = typeof chrome !== "undefined" && !!(chrome.downloads && chrome.downloads.download);
 async function getSettings() {
   const s = await chrome.storage.sync.get(DEFAULTS);
   return { ...DEFAULTS, ...s };
@@ -2553,6 +2554,11 @@ async function extractFromTab(tabId) {
   return chrome.tabs.sendMessage(tabId, { type: "ATK_EXTRACT" });
 }
 async function deliverDownload(blob, filename) {
+  if (!HAS_DOWNLOADS) {
+    throw new Error(
+      "Ce navigateur (Safari) ne permet pas le t\xE9l\xE9chargement direct. Passe en mode \xAB Envoyer par email \xBB dans les r\xE9glages."
+    );
+  }
   const dataUrl = await blobToDataURL(blob);
   await chrome.downloads.download({ url: dataUrl, filename, saveAs: false });
   return `EPUB t\xE9l\xE9charg\xE9 : ${filename}`;
@@ -2578,12 +2584,13 @@ async function deliverRelay(blob, filename, settings) {
 }
 async function clip(tabId) {
   const settings = await getSettings();
+  const mode = settings.mode === "download" && !HAS_DOWNLOADS && settings.relayUrl ? "relay" : settings.mode;
   const article = await extractFromTab(tabId);
   if (!article || article.error) throw new Error(article ? article.error : "Extraction vide.");
   const images = await fetchImages(article.imageRefs || []);
   const blob = await buildEpub({ ...article, images });
   const filename = slugifyFilename(article.title);
-  if (settings.mode === "relay") return deliverRelay(blob, filename, settings);
+  if (mode === "relay") return deliverRelay(blob, filename, settings);
   return deliverDownload(blob, filename);
 }
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
@@ -2593,32 +2600,48 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   }
 });
 chrome.runtime.onInstalled.addListener((details) => {
-  chrome.contextMenus.create({
-    id: "atk-send-page",
-    title: "Envoyer vers le Kindle",
-    contexts: ["page", "selection"]
-  });
+  if (chrome.contextMenus && chrome.contextMenus.create) {
+    try {
+      chrome.contextMenus.create({
+        id: "atk-send-page",
+        title: "Envoyer vers le Kindle",
+        contexts: ["page", "selection"]
+      });
+    } catch (_) {
+    }
+  }
   if (details && details.reason === "install") {
     chrome.tabs.create({ url: chrome.runtime.getURL("welcome/welcome.html") });
   }
 });
-async function clipWithBadge(tabId) {
+function setBadgeSafe(text, color, tabId) {
   try {
-    chrome.action.setBadgeText({ text: "\u2026", tabId });
-    const status = await clip(tabId);
-    chrome.action.setBadgeBackgroundColor({ color: "#059669", tabId });
-    chrome.action.setBadgeText({ text: "\u2713", tabId });
-    return status;
-  } catch (e) {
-    chrome.action.setBadgeBackgroundColor({ color: "#dc2626", tabId });
-    chrome.action.setBadgeText({ text: "!", tabId });
-    throw e;
-  } finally {
-    setTimeout(() => chrome.action.setBadgeText({ text: "", tabId }), 4e3);
+    if (chrome.action && chrome.action.setBadgeText) {
+      if (color && chrome.action.setBadgeBackgroundColor) {
+        chrome.action.setBadgeBackgroundColor({ color, tabId });
+      }
+      chrome.action.setBadgeText({ text, tabId });
+    }
+  } catch (_) {
   }
 }
-chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if (info.menuItemId === "atk-send-page" && tab && tab.id != null) {
-    clipWithBadge(tab.id).catch((e) => console.warn("ATK:", e.message || e));
+async function clipWithBadge(tabId) {
+  try {
+    setBadgeSafe("\u2026", null, tabId);
+    const status = await clip(tabId);
+    setBadgeSafe("\u2713", "#059669", tabId);
+    return status;
+  } catch (e) {
+    setBadgeSafe("!", "#dc2626", tabId);
+    throw e;
+  } finally {
+    setTimeout(() => setBadgeSafe("", null, tabId), 4e3);
   }
-});
+}
+if (chrome.contextMenus && chrome.contextMenus.onClicked) {
+  chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId === "atk-send-page" && tab && tab.id != null) {
+      clipWithBadge(tab.id).catch((e) => console.warn("ATK:", e.message || e));
+    }
+  });
+}
