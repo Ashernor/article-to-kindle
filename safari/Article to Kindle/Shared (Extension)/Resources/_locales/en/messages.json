@@ -29,5 +29,5 @@
   "welcomeModeDownloadLong": { "message": "Download the EPUB (default, 100% local)" },
   "welcomeModeEmailLong": { "message": "Send by email to the Kindle (relay)" },
   "welcomeRelayHint": { "message": "The relay's sender must be on Amazon's \"Approved Personal Document E-mail List\", and your Kindle address is in Manage Your Content and Devices." },
-  "welcomeFooter": { "message": "Your settings are saved (Chrome sync storage) and reused for every send. Reopen them anytime via right-click on the icon → Options." }
+  "welcomeFooter": { "message": "Your settings are saved (synced by your browser) and reused for every send. Reopen them anytime via right-click on the icon → Options." }
 }

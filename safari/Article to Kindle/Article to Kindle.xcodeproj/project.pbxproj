@@ -7,80 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5CDB5869303B782C005AFC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB5868303B782C005AFC43 /* AppDelegate.swift */; };
-		5CDB586B303B782C005AFC43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB586A303B782C005AFC43 /* SceneDelegate.swift */; };
-		5CDB586E303B782C005AFC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB586C303B782C005AFC43 /* LaunchScreen.storyboard */; };
-		5CDB5871303B782C005AFC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB586F303B782C005AFC43 /* Main.storyboard */; };
-		5CDB587A303B782C005AFC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB5879303B782C005AFC43 /* AppDelegate.swift */; };
-		5CDB587D303B782C005AFC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB587B303B782C005AFC43 /* Main.storyboard */; };
-		5CDB5884303B782C005AFC43 /* Article to Kindle Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5CDB5883303B782C005AFC43 /* Article to Kindle Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5CDB588E303B782C005AFC43 /* Article to Kindle Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5CDB588D303B782C005AFC43 /* Article to Kindle Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5CDB5893303B782C005AFC43 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB5858303B782B005AFC43 /* Main.html */; };
-		5CDB5894303B782C005AFC43 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB5858303B782B005AFC43 /* Main.html */; };
-		5CDB5895303B782C005AFC43 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB585A303B782B005AFC43 /* Icon.png */; };
-		5CDB5896303B782C005AFC43 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB585A303B782B005AFC43 /* Icon.png */; };
-		5CDB5897303B782C005AFC43 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB585B303B782B005AFC43 /* Style.css */; };
-		5CDB5898303B782C005AFC43 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB585B303B782B005AFC43 /* Style.css */; };
-		5CDB5899303B782C005AFC43 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB585C303B782B005AFC43 /* Script.js */; };
-		5CDB589A303B782C005AFC43 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB585C303B782B005AFC43 /* Script.js */; };
-		5CDB589B303B782C005AFC43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB585D303B782B005AFC43 /* ViewController.swift */; };
-		5CDB589C303B782C005AFC43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB585D303B782B005AFC43 /* ViewController.swift */; };
-		5CDB589D303B782C005AFC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB585E303B782C005AFC43 /* Assets.xcassets */; };
-		5CDB589E303B782C005AFC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB585E303B782C005AFC43 /* Assets.xcassets */; };
-		5CDB589F303B782C005AFC43 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB5860303B782C005AFC43 /* SafariWebExtensionHandler.swift */; };
-		5CDB58A0303B782C005AFC43 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB5860303B782C005AFC43 /* SafariWebExtensionHandler.swift */; };
-		5CDB58B9303B782C005AFC43 /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B2303B782C005AFC43 /* popup */; };
-		5CDB58BA303B782C005AFC43 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B3303B782C005AFC43 /* dist */; };
-		5CDB58BB303B782C005AFC43 /* welcome in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B4303B782C005AFC43 /* welcome */; };
-		5CDB58BC303B782C005AFC43 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B5303B782C005AFC43 /* icons */; };
-		5CDB58BD303B782C005AFC43 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B6303B782C005AFC43 /* manifest.json */; };
-		5CDB58BE303B782C005AFC43 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B7303B782C005AFC43 /* _locales */; };
-		5CDB58BF303B782C005AFC43 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B8303B782C005AFC43 /* src */; };
-		5CDB58C0303B782C005AFC43 /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B2303B782C005AFC43 /* popup */; };
-		5CDB58C1303B782C005AFC43 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B3303B782C005AFC43 /* dist */; };
-		5CDB58C2303B782C005AFC43 /* welcome in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B4303B782C005AFC43 /* welcome */; };
-		5CDB58C3303B782C005AFC43 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B5303B782C005AFC43 /* icons */; };
-		5CDB58C4303B782C005AFC43 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B6303B782C005AFC43 /* manifest.json */; };
-		5CDB58C5303B782C005AFC43 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B7303B782C005AFC43 /* _locales */; };
-		5CDB58C6303B782C005AFC43 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 5CDB58B8303B782C005AFC43 /* src */; };
+		5C17F8F5303B93D2008FF959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17F8F4303B93D2008FF959 /* AppDelegate.swift */; };
+		5C17F8F7303B93D2008FF959 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17F8F6303B93D2008FF959 /* SceneDelegate.swift */; };
+		5C17F8FA303B93D2008FF959 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8F8303B93D2008FF959 /* LaunchScreen.storyboard */; };
+		5C17F8FD303B93D2008FF959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8FB303B93D2008FF959 /* Main.storyboard */; };
+		5C17F906303B93D2008FF959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17F905303B93D2008FF959 /* AppDelegate.swift */; };
+		5C17F909303B93D2008FF959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F907303B93D2008FF959 /* Main.storyboard */; };
+		5C17F910303B93D2008FF959 /* Article to Kindle Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5C17F90F303B93D2008FF959 /* Article to Kindle Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C17F91A303B93D2008FF959 /* Article to Kindle Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5C17F919303B93D2008FF959 /* Article to Kindle Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C17F91F303B93D2008FF959 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8E4303B93D1008FF959 /* Main.html */; };
+		5C17F920303B93D2008FF959 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8E4303B93D1008FF959 /* Main.html */; };
+		5C17F921303B93D2008FF959 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8E6303B93D1008FF959 /* Icon.png */; };
+		5C17F922303B93D2008FF959 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8E6303B93D1008FF959 /* Icon.png */; };
+		5C17F923303B93D2008FF959 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8E7303B93D1008FF959 /* Style.css */; };
+		5C17F924303B93D2008FF959 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8E7303B93D1008FF959 /* Style.css */; };
+		5C17F925303B93D2008FF959 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8E8303B93D1008FF959 /* Script.js */; };
+		5C17F926303B93D2008FF959 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8E8303B93D1008FF959 /* Script.js */; };
+		5C17F927303B93D2008FF959 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17F8E9303B93D1008FF959 /* ViewController.swift */; };
+		5C17F928303B93D2008FF959 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17F8E9303B93D1008FF959 /* ViewController.swift */; };
+		5C17F929303B93D2008FF959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8EA303B93D2008FF959 /* Assets.xcassets */; };
+		5C17F92A303B93D2008FF959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F8EA303B93D2008FF959 /* Assets.xcassets */; };
+		5C17F92B303B93D2008FF959 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17F8EC303B93D2008FF959 /* SafariWebExtensionHandler.swift */; };
+		5C17F92C303B93D2008FF959 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17F8EC303B93D2008FF959 /* SafariWebExtensionHandler.swift */; };
+		5C17F945303B93D2008FF959 /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F93E303B93D2008FF959 /* popup */; };
+		5C17F946303B93D2008FF959 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F93F303B93D2008FF959 /* dist */; };
+		5C17F947303B93D2008FF959 /* welcome in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F940303B93D2008FF959 /* welcome */; };
+		5C17F948303B93D2008FF959 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F941303B93D2008FF959 /* icons */; };
+		5C17F949303B93D2008FF959 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F942303B93D2008FF959 /* manifest.json */; };
+		5C17F94A303B93D2008FF959 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F943303B93D2008FF959 /* _locales */; };
+		5C17F94B303B93D2008FF959 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F944303B93D2008FF959 /* src */; };
+		5C17F94C303B93D2008FF959 /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F93E303B93D2008FF959 /* popup */; };
+		5C17F94D303B93D2008FF959 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F93F303B93D2008FF959 /* dist */; };
+		5C17F94E303B93D2008FF959 /* welcome in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F940303B93D2008FF959 /* welcome */; };
+		5C17F94F303B93D2008FF959 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F941303B93D2008FF959 /* icons */; };
+		5C17F950303B93D2008FF959 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F942303B93D2008FF959 /* manifest.json */; };
+		5C17F951303B93D2008FF959 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F943303B93D2008FF959 /* _locales */; };
+		5C17F952303B93D2008FF959 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 5C17F944303B93D2008FF959 /* src */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5CDB5885303B782C005AFC43 /* PBXContainerItemProxy */ = {
+		5C17F911303B93D2008FF959 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5CDB5852303B782B005AFC43 /* Project object */;
+			containerPortal = 5C17F8DE303B93D1008FF959 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5CDB5882303B782C005AFC43;
+			remoteGlobalIDString = 5C17F90E303B93D2008FF959;
 			remoteInfo = "Article to Kindle Extension (iOS)";
 		};
-		5CDB588F303B782C005AFC43 /* PBXContainerItemProxy */ = {
+		5C17F91B303B93D2008FF959 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5CDB5852303B782B005AFC43 /* Project object */;
+			containerPortal = 5C17F8DE303B93D1008FF959 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5CDB588C303B782C005AFC43;
+			remoteGlobalIDString = 5C17F918303B93D2008FF959;
 			remoteInfo = "Article to Kindle Extension (macOS)";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5CDB58A6303B782C005AFC43 /* Embed Foundation Extensions */ = {
+		5C17F932303B93D2008FF959 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5CDB5884303B782C005AFC43 /* Article to Kindle Extension.appex in Embed Foundation Extensions */,
+				5C17F910303B93D2008FF959 /* Article to Kindle Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB58AD303B782C005AFC43 /* Embed Foundation Extensions */ = {
+		5C17F939303B93D2008FF959 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5CDB588E303B782C005AFC43 /* Article to Kindle Extension.appex in Embed Foundation Extensions */,
+				5C17F91A303B93D2008FF959 /* Article to Kindle Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,59 +88,59 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5CDB5859303B782B005AFC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
-		5CDB585A303B782B005AFC43 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		5CDB585B303B782B005AFC43 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
-		5CDB585C303B782B005AFC43 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		5CDB585D303B782B005AFC43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5CDB585E303B782C005AFC43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5CDB5860303B782C005AFC43 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		5CDB5865303B782C005AFC43 /* Article to Kindle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Article to Kindle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CDB5868303B782C005AFC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5CDB586A303B782C005AFC43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5CDB586D303B782C005AFC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5CDB5870303B782C005AFC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5CDB5872303B782C005AFC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CDB5877303B782C005AFC43 /* Article to Kindle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Article to Kindle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CDB5879303B782C005AFC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5CDB587C303B782C005AFC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5CDB587E303B782C005AFC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CDB5883303B782C005AFC43 /* Article to Kindle Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Article to Kindle Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CDB5888303B782C005AFC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CDB588D303B782C005AFC43 /* Article to Kindle Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Article to Kindle Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CDB5892303B782C005AFC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CDB58B2303B782C005AFC43 /* popup */ = {isa = PBXFileReference; lastKnownFileType = folder; name = popup; path = Resources/popup; sourceTree = "<group>"; };
-		5CDB58B3303B782C005AFC43 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = Resources/dist; sourceTree = "<group>"; };
-		5CDB58B4303B782C005AFC43 /* welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; name = welcome; path = Resources/welcome; sourceTree = "<group>"; };
-		5CDB58B5303B782C005AFC43 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
-		5CDB58B6303B782C005AFC43 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
-		5CDB58B7303B782C005AFC43 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = Resources/_locales; sourceTree = "<group>"; };
-		5CDB58B8303B782C005AFC43 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = Resources/src; sourceTree = "<group>"; };
+		5C17F8E5303B93D1008FF959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		5C17F8E6303B93D1008FF959 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		5C17F8E7303B93D1008FF959 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		5C17F8E8303B93D1008FF959 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		5C17F8E9303B93D1008FF959 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C17F8EA303B93D2008FF959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C17F8EC303B93D2008FF959 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		5C17F8F1303B93D2008FF959 /* Article to Kindle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Article to Kindle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C17F8F4303B93D2008FF959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C17F8F6303B93D2008FF959 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5C17F8F9303B93D2008FF959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C17F8FC303B93D2008FF959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C17F8FE303B93D2008FF959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C17F903303B93D2008FF959 /* Article to Kindle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Article to Kindle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C17F905303B93D2008FF959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C17F908303B93D2008FF959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C17F90A303B93D2008FF959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C17F90F303B93D2008FF959 /* Article to Kindle Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Article to Kindle Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C17F914303B93D2008FF959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C17F919303B93D2008FF959 /* Article to Kindle Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Article to Kindle Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C17F91E303B93D2008FF959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C17F93E303B93D2008FF959 /* popup */ = {isa = PBXFileReference; lastKnownFileType = folder; name = popup; path = Resources/popup; sourceTree = "<group>"; };
+		5C17F93F303B93D2008FF959 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = Resources/dist; sourceTree = "<group>"; };
+		5C17F940303B93D2008FF959 /* welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; name = welcome; path = Resources/welcome; sourceTree = "<group>"; };
+		5C17F941303B93D2008FF959 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
+		5C17F942303B93D2008FF959 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
+		5C17F943303B93D2008FF959 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = Resources/_locales; sourceTree = "<group>"; };
+		5C17F944303B93D2008FF959 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = Resources/src; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5CDB5862303B782C005AFC43 /* Frameworks */ = {
+		5C17F8EE303B93D2008FF959 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB5874303B782C005AFC43 /* Frameworks */ = {
+		5C17F900303B93D2008FF959 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB5880303B782C005AFC43 /* Frameworks */ = {
+		5C17F90C303B93D2008FF959 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB588A303B782C005AFC43 /* Frameworks */ = {
+		5C17F916303B93D2008FF959 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -150,108 +150,108 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5CDB5851303B782B005AFC43 = {
+		5C17F8DD303B93D1008FF959 = {
 			isa = PBXGroup;
 			children = (
-				5CDB5856303B782B005AFC43 /* Shared (App) */,
-				5CDB585F303B782C005AFC43 /* Shared (Extension) */,
-				5CDB5867303B782C005AFC43 /* iOS (App) */,
-				5CDB5878303B782C005AFC43 /* macOS (App) */,
-				5CDB5887303B782C005AFC43 /* iOS (Extension) */,
-				5CDB5891303B782C005AFC43 /* macOS (Extension) */,
-				5CDB5866303B782C005AFC43 /* Products */,
+				5C17F8E2303B93D1008FF959 /* Shared (App) */,
+				5C17F8EB303B93D2008FF959 /* Shared (Extension) */,
+				5C17F8F3303B93D2008FF959 /* iOS (App) */,
+				5C17F904303B93D2008FF959 /* macOS (App) */,
+				5C17F913303B93D2008FF959 /* iOS (Extension) */,
+				5C17F91D303B93D2008FF959 /* macOS (Extension) */,
+				5C17F8F2303B93D2008FF959 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5CDB5856303B782B005AFC43 /* Shared (App) */ = {
+		5C17F8E2303B93D1008FF959 /* Shared (App) */ = {
 			isa = PBXGroup;
 			children = (
-				5CDB585D303B782B005AFC43 /* ViewController.swift */,
-				5CDB585E303B782C005AFC43 /* Assets.xcassets */,
-				5CDB5857303B782B005AFC43 /* Resources */,
+				5C17F8E9303B93D1008FF959 /* ViewController.swift */,
+				5C17F8EA303B93D2008FF959 /* Assets.xcassets */,
+				5C17F8E3303B93D1008FF959 /* Resources */,
 			);
 			path = "Shared (App)";
 			sourceTree = "<group>";
 		};
-		5CDB5857303B782B005AFC43 /* Resources */ = {
+		5C17F8E3303B93D1008FF959 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5CDB5858303B782B005AFC43 /* Main.html */,
-				5CDB585A303B782B005AFC43 /* Icon.png */,
-				5CDB585B303B782B005AFC43 /* Style.css */,
-				5CDB585C303B782B005AFC43 /* Script.js */,
+				5C17F8E4303B93D1008FF959 /* Main.html */,
+				5C17F8E6303B93D1008FF959 /* Icon.png */,
+				5C17F8E7303B93D1008FF959 /* Style.css */,
+				5C17F8E8303B93D1008FF959 /* Script.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		5CDB585F303B782C005AFC43 /* Shared (Extension) */ = {
+		5C17F8EB303B93D2008FF959 /* Shared (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				5CDB58B1303B782C005AFC43 /* Resources */,
-				5CDB5860303B782C005AFC43 /* SafariWebExtensionHandler.swift */,
+				5C17F93D303B93D2008FF959 /* Resources */,
+				5C17F8EC303B93D2008FF959 /* SafariWebExtensionHandler.swift */,
 			);
 			path = "Shared (Extension)";
 			sourceTree = "<group>";
 		};
-		5CDB5866303B782C005AFC43 /* Products */ = {
+		5C17F8F2303B93D2008FF959 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CDB5865303B782C005AFC43 /* Article to Kindle.app */,
-				5CDB5877303B782C005AFC43 /* Article to Kindle.app */,
-				5CDB5883303B782C005AFC43 /* Article to Kindle Extension.appex */,
-				5CDB588D303B782C005AFC43 /* Article to Kindle Extension.appex */,
+				5C17F8F1303B93D2008FF959 /* Article to Kindle.app */,
+				5C17F903303B93D2008FF959 /* Article to Kindle.app */,
+				5C17F90F303B93D2008FF959 /* Article to Kindle Extension.appex */,
+				5C17F919303B93D2008FF959 /* Article to Kindle Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5CDB5867303B782C005AFC43 /* iOS (App) */ = {
+		5C17F8F3303B93D2008FF959 /* iOS (App) */ = {
 			isa = PBXGroup;
 			children = (
-				5CDB5868303B782C005AFC43 /* AppDelegate.swift */,
-				5CDB586A303B782C005AFC43 /* SceneDelegate.swift */,
-				5CDB586C303B782C005AFC43 /* LaunchScreen.storyboard */,
-				5CDB586F303B782C005AFC43 /* Main.storyboard */,
-				5CDB5872303B782C005AFC43 /* Info.plist */,
+				5C17F8F4303B93D2008FF959 /* AppDelegate.swift */,
+				5C17F8F6303B93D2008FF959 /* SceneDelegate.swift */,
+				5C17F8F8303B93D2008FF959 /* LaunchScreen.storyboard */,
+				5C17F8FB303B93D2008FF959 /* Main.storyboard */,
+				5C17F8FE303B93D2008FF959 /* Info.plist */,
 			);
 			path = "iOS (App)";
 			sourceTree = "<group>";
 		};
-		5CDB5878303B782C005AFC43 /* macOS (App) */ = {
+		5C17F904303B93D2008FF959 /* macOS (App) */ = {
 			isa = PBXGroup;
 			children = (
-				5CDB5879303B782C005AFC43 /* AppDelegate.swift */,
-				5CDB587B303B782C005AFC43 /* Main.storyboard */,
-				5CDB587E303B782C005AFC43 /* Info.plist */,
+				5C17F905303B93D2008FF959 /* AppDelegate.swift */,
+				5C17F907303B93D2008FF959 /* Main.storyboard */,
+				5C17F90A303B93D2008FF959 /* Info.plist */,
 			);
 			path = "macOS (App)";
 			sourceTree = "<group>";
 		};
-		5CDB5887303B782C005AFC43 /* iOS (Extension) */ = {
+		5C17F913303B93D2008FF959 /* iOS (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				5CDB5888303B782C005AFC43 /* Info.plist */,
+				5C17F914303B93D2008FF959 /* Info.plist */,
 			);
 			path = "iOS (Extension)";
 			sourceTree = "<group>";
 		};
-		5CDB5891303B782C005AFC43 /* macOS (Extension) */ = {
+		5C17F91D303B93D2008FF959 /* macOS (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				5CDB5892303B782C005AFC43 /* Info.plist */,
+				5C17F91E303B93D2008FF959 /* Info.plist */,
 			);
 			path = "macOS (Extension)";
 			sourceTree = "<group>";
 		};
-		5CDB58B1303B782C005AFC43 /* Resources */ = {
+		5C17F93D303B93D2008FF959 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5CDB58B2303B782C005AFC43 /* popup */,
-				5CDB58B3303B782C005AFC43 /* dist */,
-				5CDB58B4303B782C005AFC43 /* welcome */,
-				5CDB58B5303B782C005AFC43 /* icons */,
-				5CDB58B6303B782C005AFC43 /* manifest.json */,
-				5CDB58B7303B782C005AFC43 /* _locales */,
-				5CDB58B8303B782C005AFC43 /* src */,
+				5C17F93E303B93D2008FF959 /* popup */,
+				5C17F93F303B93D2008FF959 /* dist */,
+				5C17F940303B93D2008FF959 /* welcome */,
+				5C17F941303B93D2008FF959 /* icons */,
+				5C17F942303B93D2008FF959 /* manifest.json */,
+				5C17F943303B93D2008FF959 /* _locales */,
+				5C17F944303B93D2008FF959 /* src */,
 			);
 			name = Resources;
 			path = "Shared (Extension)";
@@ -260,55 +260,55 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5CDB5864303B782C005AFC43 /* Article to Kindle (iOS) */ = {
+		5C17F8F0303B93D2008FF959 /* Article to Kindle (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CDB58A7303B782C005AFC43 /* Build configuration list for PBXNativeTarget "Article to Kindle (iOS)" */;
+			buildConfigurationList = 5C17F933303B93D2008FF959 /* Build configuration list for PBXNativeTarget "Article to Kindle (iOS)" */;
 			buildPhases = (
-				5CDB5861303B782C005AFC43 /* Sources */,
-				5CDB5862303B782C005AFC43 /* Frameworks */,
-				5CDB5863303B782C005AFC43 /* Resources */,
-				5CDB58A6303B782C005AFC43 /* Embed Foundation Extensions */,
+				5C17F8ED303B93D2008FF959 /* Sources */,
+				5C17F8EE303B93D2008FF959 /* Frameworks */,
+				5C17F8EF303B93D2008FF959 /* Resources */,
+				5C17F932303B93D2008FF959 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5CDB5886303B782C005AFC43 /* PBXTargetDependency */,
+				5C17F912303B93D2008FF959 /* PBXTargetDependency */,
 			);
 			name = "Article to Kindle (iOS)";
 			packageProductDependencies = (
 			);
 			productName = "Article to Kindle (iOS)";
-			productReference = 5CDB5865303B782C005AFC43 /* Article to Kindle.app */;
+			productReference = 5C17F8F1303B93D2008FF959 /* Article to Kindle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5CDB5876303B782C005AFC43 /* Article to Kindle (macOS) */ = {
+		5C17F902303B93D2008FF959 /* Article to Kindle (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CDB58AE303B782C005AFC43 /* Build configuration list for PBXNativeTarget "Article to Kindle (macOS)" */;
+			buildConfigurationList = 5C17F93A303B93D2008FF959 /* Build configuration list for PBXNativeTarget "Article to Kindle (macOS)" */;
 			buildPhases = (
-				5CDB5873303B782C005AFC43 /* Sources */,
-				5CDB5874303B782C005AFC43 /* Frameworks */,
-				5CDB5875303B782C005AFC43 /* Resources */,
-				5CDB58AD303B782C005AFC43 /* Embed Foundation Extensions */,
+				5C17F8FF303B93D2008FF959 /* Sources */,
+				5C17F900303B93D2008FF959 /* Frameworks */,
+				5C17F901303B93D2008FF959 /* Resources */,
+				5C17F939303B93D2008FF959 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5CDB5890303B782C005AFC43 /* PBXTargetDependency */,
+				5C17F91C303B93D2008FF959 /* PBXTargetDependency */,
 			);
 			name = "Article to Kindle (macOS)";
 			packageProductDependencies = (
 			);
 			productName = "Article to Kindle (macOS)";
-			productReference = 5CDB5877303B782C005AFC43 /* Article to Kindle.app */;
+			productReference = 5C17F903303B93D2008FF959 /* Article to Kindle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5CDB5882303B782C005AFC43 /* Article to Kindle Extension (iOS) */ = {
+		5C17F90E303B93D2008FF959 /* Article to Kindle Extension (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CDB58A3303B782C005AFC43 /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (iOS)" */;
+			buildConfigurationList = 5C17F92F303B93D2008FF959 /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (iOS)" */;
 			buildPhases = (
-				5CDB587F303B782C005AFC43 /* Sources */,
-				5CDB5880303B782C005AFC43 /* Frameworks */,
-				5CDB5881303B782C005AFC43 /* Resources */,
+				5C17F90B303B93D2008FF959 /* Sources */,
+				5C17F90C303B93D2008FF959 /* Frameworks */,
+				5C17F90D303B93D2008FF959 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -318,16 +318,16 @@
 			packageProductDependencies = (
 			);
 			productName = "Article to Kindle Extension (iOS)";
-			productReference = 5CDB5883303B782C005AFC43 /* Article to Kindle Extension.appex */;
+			productReference = 5C17F90F303B93D2008FF959 /* Article to Kindle Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		5CDB588C303B782C005AFC43 /* Article to Kindle Extension (macOS) */ = {
+		5C17F918303B93D2008FF959 /* Article to Kindle Extension (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CDB58AA303B782C005AFC43 /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (macOS)" */;
+			buildConfigurationList = 5C17F936303B93D2008FF959 /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (macOS)" */;
 			buildPhases = (
-				5CDB5889303B782C005AFC43 /* Sources */,
-				5CDB588A303B782C005AFC43 /* Frameworks */,
-				5CDB588B303B782C005AFC43 /* Resources */,
+				5C17F915303B93D2008FF959 /* Sources */,
+				5C17F916303B93D2008FF959 /* Frameworks */,
+				5C17F917303B93D2008FF959 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -337,193 +337,193 @@
 			packageProductDependencies = (
 			);
 			productName = "Article to Kindle Extension (macOS)";
-			productReference = 5CDB588D303B782C005AFC43 /* Article to Kindle Extension.appex */;
+			productReference = 5C17F919303B93D2008FF959 /* Article to Kindle Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5CDB5852303B782B005AFC43 /* Project object */ = {
+		5C17F8DE303B93D1008FF959 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 2660;
 				TargetAttributes = {
-					5CDB5864303B782C005AFC43 = {
+					5C17F8F0303B93D2008FF959 = {
 						CreatedOnToolsVersion = 26.6;
 					};
-					5CDB5876303B782C005AFC43 = {
+					5C17F902303B93D2008FF959 = {
 						CreatedOnToolsVersion = 26.6;
 					};
-					5CDB5882303B782C005AFC43 = {
+					5C17F90E303B93D2008FF959 = {
 						CreatedOnToolsVersion = 26.6;
 					};
-					5CDB588C303B782C005AFC43 = {
+					5C17F918303B93D2008FF959 = {
 						CreatedOnToolsVersion = 26.6;
 					};
 				};
 			};
-			buildConfigurationList = 5CDB5855303B782B005AFC43 /* Build configuration list for PBXProject "Article to Kindle" */;
+			buildConfigurationList = 5C17F8E1303B93D1008FF959 /* Build configuration list for PBXProject "Article to Kindle" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 5CDB5851303B782B005AFC43;
+			mainGroup = 5C17F8DD303B93D1008FF959;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 5CDB5866303B782C005AFC43 /* Products */;
+			productRefGroup = 5C17F8F2303B93D2008FF959 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5CDB5864303B782C005AFC43 /* Article to Kindle (iOS) */,
-				5CDB5876303B782C005AFC43 /* Article to Kindle (macOS) */,
-				5CDB5882303B782C005AFC43 /* Article to Kindle Extension (iOS) */,
-				5CDB588C303B782C005AFC43 /* Article to Kindle Extension (macOS) */,
+				5C17F8F0303B93D2008FF959 /* Article to Kindle (iOS) */,
+				5C17F902303B93D2008FF959 /* Article to Kindle (macOS) */,
+				5C17F90E303B93D2008FF959 /* Article to Kindle Extension (iOS) */,
+				5C17F918303B93D2008FF959 /* Article to Kindle Extension (macOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5CDB5863303B782C005AFC43 /* Resources */ = {
+		5C17F8EF303B93D2008FF959 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDB5895303B782C005AFC43 /* Icon.png in Resources */,
-				5CDB586E303B782C005AFC43 /* LaunchScreen.storyboard in Resources */,
-				5CDB5893303B782C005AFC43 /* Main.html in Resources */,
-				5CDB5899303B782C005AFC43 /* Script.js in Resources */,
-				5CDB589D303B782C005AFC43 /* Assets.xcassets in Resources */,
-				5CDB5871303B782C005AFC43 /* Main.storyboard in Resources */,
-				5CDB5897303B782C005AFC43 /* Style.css in Resources */,
+				5C17F921303B93D2008FF959 /* Icon.png in Resources */,
+				5C17F8FA303B93D2008FF959 /* LaunchScreen.storyboard in Resources */,
+				5C17F91F303B93D2008FF959 /* Main.html in Resources */,
+				5C17F925303B93D2008FF959 /* Script.js in Resources */,
+				5C17F929303B93D2008FF959 /* Assets.xcassets in Resources */,
+				5C17F8FD303B93D2008FF959 /* Main.storyboard in Resources */,
+				5C17F923303B93D2008FF959 /* Style.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB5875303B782C005AFC43 /* Resources */ = {
+		5C17F901303B93D2008FF959 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDB5896303B782C005AFC43 /* Icon.png in Resources */,
-				5CDB5898303B782C005AFC43 /* Style.css in Resources */,
-				5CDB587D303B782C005AFC43 /* Main.storyboard in Resources */,
-				5CDB589A303B782C005AFC43 /* Script.js in Resources */,
-				5CDB589E303B782C005AFC43 /* Assets.xcassets in Resources */,
-				5CDB5894303B782C005AFC43 /* Main.html in Resources */,
+				5C17F922303B93D2008FF959 /* Icon.png in Resources */,
+				5C17F924303B93D2008FF959 /* Style.css in Resources */,
+				5C17F909303B93D2008FF959 /* Main.storyboard in Resources */,
+				5C17F926303B93D2008FF959 /* Script.js in Resources */,
+				5C17F92A303B93D2008FF959 /* Assets.xcassets in Resources */,
+				5C17F920303B93D2008FF959 /* Main.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB5881303B782C005AFC43 /* Resources */ = {
+		5C17F90D303B93D2008FF959 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDB58C5303B782C005AFC43 /* _locales in Resources */,
-				5CDB58C2303B782C005AFC43 /* welcome in Resources */,
-				5CDB58C3303B782C005AFC43 /* icons in Resources */,
-				5CDB58C4303B782C005AFC43 /* manifest.json in Resources */,
-				5CDB58C1303B782C005AFC43 /* dist in Resources */,
-				5CDB58C6303B782C005AFC43 /* src in Resources */,
-				5CDB58C0303B782C005AFC43 /* popup in Resources */,
+				5C17F951303B93D2008FF959 /* _locales in Resources */,
+				5C17F94E303B93D2008FF959 /* welcome in Resources */,
+				5C17F94F303B93D2008FF959 /* icons in Resources */,
+				5C17F950303B93D2008FF959 /* manifest.json in Resources */,
+				5C17F94D303B93D2008FF959 /* dist in Resources */,
+				5C17F952303B93D2008FF959 /* src in Resources */,
+				5C17F94C303B93D2008FF959 /* popup in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB588B303B782C005AFC43 /* Resources */ = {
+		5C17F917303B93D2008FF959 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDB58BE303B782C005AFC43 /* _locales in Resources */,
-				5CDB58BB303B782C005AFC43 /* welcome in Resources */,
-				5CDB58BC303B782C005AFC43 /* icons in Resources */,
-				5CDB58BD303B782C005AFC43 /* manifest.json in Resources */,
-				5CDB58BA303B782C005AFC43 /* dist in Resources */,
-				5CDB58BF303B782C005AFC43 /* src in Resources */,
-				5CDB58B9303B782C005AFC43 /* popup in Resources */,
+				5C17F94A303B93D2008FF959 /* _locales in Resources */,
+				5C17F947303B93D2008FF959 /* welcome in Resources */,
+				5C17F948303B93D2008FF959 /* icons in Resources */,
+				5C17F949303B93D2008FF959 /* manifest.json in Resources */,
+				5C17F946303B93D2008FF959 /* dist in Resources */,
+				5C17F94B303B93D2008FF959 /* src in Resources */,
+				5C17F945303B93D2008FF959 /* popup in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5CDB5861303B782C005AFC43 /* Sources */ = {
+		5C17F8ED303B93D2008FF959 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDB589B303B782C005AFC43 /* ViewController.swift in Sources */,
-				5CDB5869303B782C005AFC43 /* AppDelegate.swift in Sources */,
-				5CDB586B303B782C005AFC43 /* SceneDelegate.swift in Sources */,
+				5C17F927303B93D2008FF959 /* ViewController.swift in Sources */,
+				5C17F8F5303B93D2008FF959 /* AppDelegate.swift in Sources */,
+				5C17F8F7303B93D2008FF959 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB5873303B782C005AFC43 /* Sources */ = {
+		5C17F8FF303B93D2008FF959 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDB589C303B782C005AFC43 /* ViewController.swift in Sources */,
-				5CDB587A303B782C005AFC43 /* AppDelegate.swift in Sources */,
+				5C17F928303B93D2008FF959 /* ViewController.swift in Sources */,
+				5C17F906303B93D2008FF959 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB587F303B782C005AFC43 /* Sources */ = {
+		5C17F90B303B93D2008FF959 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDB589F303B782C005AFC43 /* SafariWebExtensionHandler.swift in Sources */,
+				5C17F92B303B93D2008FF959 /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CDB5889303B782C005AFC43 /* Sources */ = {
+		5C17F915303B93D2008FF959 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDB58A0303B782C005AFC43 /* SafariWebExtensionHandler.swift in Sources */,
+				5C17F92C303B93D2008FF959 /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5CDB5886303B782C005AFC43 /* PBXTargetDependency */ = {
+		5C17F912303B93D2008FF959 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CDB5882303B782C005AFC43 /* Article to Kindle Extension (iOS) */;
-			targetProxy = 5CDB5885303B782C005AFC43 /* PBXContainerItemProxy */;
+			target = 5C17F90E303B93D2008FF959 /* Article to Kindle Extension (iOS) */;
+			targetProxy = 5C17F911303B93D2008FF959 /* PBXContainerItemProxy */;
 		};
-		5CDB5890303B782C005AFC43 /* PBXTargetDependency */ = {
+		5C17F91C303B93D2008FF959 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CDB588C303B782C005AFC43 /* Article to Kindle Extension (macOS) */;
-			targetProxy = 5CDB588F303B782C005AFC43 /* PBXContainerItemProxy */;
+			target = 5C17F918303B93D2008FF959 /* Article to Kindle Extension (macOS) */;
+			targetProxy = 5C17F91B303B93D2008FF959 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5CDB5858303B782B005AFC43 /* Main.html */ = {
+		5C17F8E4303B93D1008FF959 /* Main.html */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5CDB5859303B782B005AFC43 /* Base */,
+				5C17F8E5303B93D1008FF959 /* Base */,
 			);
 			name = Main.html;
 			sourceTree = "<group>";
 		};
-		5CDB586C303B782C005AFC43 /* LaunchScreen.storyboard */ = {
+		5C17F8F8303B93D2008FF959 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5CDB586D303B782C005AFC43 /* Base */,
+				5C17F8F9303B93D2008FF959 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		5CDB586F303B782C005AFC43 /* Main.storyboard */ = {
+		5C17F8FB303B93D2008FF959 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5CDB5870303B782C005AFC43 /* Base */,
+				5C17F8FC303B93D2008FF959 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		5CDB587B303B782C005AFC43 /* Main.storyboard */ = {
+		5C17F907303B93D2008FF959 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5CDB587C303B782C005AFC43 /* Base */,
+				5C17F908303B93D2008FF959 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -531,7 +531,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		5CDB58A1303B782C005AFC43 /* Debug */ = {
+		5C17F92D303B93D2008FF959 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -592,7 +592,7 @@
 			};
 			name = Debug;
 		};
-		5CDB58A2303B782C005AFC43 /* Release */ = {
+		5C17F92E303B93D2008FF959 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -645,7 +645,7 @@
 			};
 			name = Release;
 		};
-		5CDB58A4303B782C005AFC43 /* Debug */ = {
+		5C17F930303B93D2008FF959 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -678,7 +678,7 @@
 			};
 			name = Debug;
 		};
-		5CDB58A5303B782C005AFC43 /* Release */ = {
+		5C17F931303B93D2008FF959 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -712,7 +712,7 @@
 			};
 			name = Release;
 		};
-		5CDB58A8303B782C005AFC43 /* Debug */ = {
+		5C17F934303B93D2008FF959 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -752,7 +752,7 @@
 			};
 			name = Debug;
 		};
-		5CDB58A9303B782C005AFC43 /* Release */ = {
+		5C17F935303B93D2008FF959 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -793,7 +793,7 @@
 			};
 			name = Release;
 		};
-		5CDB58AB303B782C005AFC43 /* Debug */ = {
+		5C17F937303B93D2008FF959 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -828,7 +828,7 @@
 			};
 			name = Debug;
 		};
-		5CDB58AC303B782C005AFC43 /* Release */ = {
+		5C17F938303B93D2008FF959 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -863,7 +863,7 @@
 			};
 			name = Release;
 		};
-		5CDB58AF303B782C005AFC43 /* Debug */ = {
+		5C17F93B303B93D2008FF959 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -904,7 +904,7 @@
 			};
 			name = Debug;
 		};
-		5CDB58B0303B782C005AFC43 /* Release */ = {
+		5C17F93C303B93D2008FF959 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -948,52 +948,52 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5CDB5855303B782B005AFC43 /* Build configuration list for PBXProject "Article to Kindle" */ = {
+		5C17F8E1303B93D1008FF959 /* Build configuration list for PBXProject "Article to Kindle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CDB58A1303B782C005AFC43 /* Debug */,
-				5CDB58A2303B782C005AFC43 /* Release */,
+				5C17F92D303B93D2008FF959 /* Debug */,
+				5C17F92E303B93D2008FF959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CDB58A3303B782C005AFC43 /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (iOS)" */ = {
+		5C17F92F303B93D2008FF959 /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CDB58A4303B782C005AFC43 /* Debug */,
-				5CDB58A5303B782C005AFC43 /* Release */,
+				5C17F930303B93D2008FF959 /* Debug */,
+				5C17F931303B93D2008FF959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CDB58A7303B782C005AFC43 /* Build configuration list for PBXNativeTarget "Article to Kindle (iOS)" */ = {
+		5C17F933303B93D2008FF959 /* Build configuration list for PBXNativeTarget "Article to Kindle (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CDB58A8303B782C005AFC43 /* Debug */,
-				5CDB58A9303B782C005AFC43 /* Release */,
+				5C17F934303B93D2008FF959 /* Debug */,
+				5C17F935303B93D2008FF959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CDB58AA303B782C005AFC43 /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (macOS)" */ = {
+		5C17F936303B93D2008FF959 /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CDB58AB303B782C005AFC43 /* Debug */,
-				5CDB58AC303B782C005AFC43 /* Release */,
+				5C17F937303B93D2008FF959 /* Debug */,
+				5C17F938303B93D2008FF959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CDB58AE303B782C005AFC43 /* Build configuration list for PBXNativeTarget "Article to Kindle (macOS)" */ = {
+		5C17F93A303B93D2008FF959 /* Build configuration list for PBXNativeTarget "Article to Kindle (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CDB58AF303B782C005AFC43 /* Debug */,
-				5CDB58B0303B782C005AFC43 /* Release */,
+				5C17F93B303B93D2008FF959 /* Debug */,
+				5C17F93C303B93D2008FF959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5CDB5852303B782B005AFC43 /* Project object */;
+	rootObject = 5C17F8DE303B93D1008FF959 /* Project object */;
 }

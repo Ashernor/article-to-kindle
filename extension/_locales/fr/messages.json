@@ -29,5 +29,5 @@
   "welcomeModeDownloadLong": { "message": "Télécharger l'EPUB (par défaut, 100% local)" },
   "welcomeModeEmailLong": { "message": "Envoyer par email vers le Kindle (relais)" },
   "welcomeRelayHint": { "message": "L'expéditeur de ton relais doit être dans la liste « Approved Personal Document E-mail List » d'Amazon, et ton adresse Kindle se trouve dans Manage Your Content and Devices." },
-  "welcomeFooter": { "message": "Tes réglages sont conservés (stockage synchronisé Chrome) et réutilisés à chaque envoi. Tu peux les rouvrir à tout moment via clic droit sur l'icône → Options." }
+  "welcomeFooter": { "message": "Tes réglages sont conservés (synchronisés par ton navigateur) et réutilisés à chaque envoi. Tu peux les rouvrir à tout moment via clic droit sur l'icône → Options." }
 }
