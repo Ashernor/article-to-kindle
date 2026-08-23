@@ -61,7 +61,12 @@ async function deliverRelay(blob, filename, settings) {
   const res = await fetch(settings.relayUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ to: settings.kindleEmail, filename, epubBase64: base64, token: settings.relayToken || undefined }),
+    body: JSON.stringify({
+      to: settings.kindleEmail,
+      filename,
+      epubBase64: base64,
+      token: settings.relayToken || undefined,
+    }),
   });
   const text = await res.text();
   if (!res.ok) throw new Error(`Relais: ${res.status} ${text.slice(0, 200)}`);
@@ -81,11 +86,43 @@ async function clip(tabId) {
   return deliverDownload(blob, filename);
 }
 
+// --- Popup entry point ---
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   if (msg && msg.type === "ATK_CLIP" && msg.tabId != null) {
     clip(msg.tabId)
       .then((status) => sendResponse({ ok: true, status }))
       .catch((e) => sendResponse({ ok: false, error: String(e && e.message ? e.message : e) }));
     return true; // async
+  }
+});
+
+// --- Right-click context menu ---
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: "atk-send-page",
+    title: "Envoyer vers le Kindle",
+    contexts: ["page", "selection"],
+  });
+});
+
+async function clipWithBadge(tabId) {
+  try {
+    chrome.action.setBadgeText({ text: "…", tabId });
+    const status = await clip(tabId);
+    chrome.action.setBadgeBackgroundColor({ color: "#059669", tabId });
+    chrome.action.setBadgeText({ text: "✓", tabId });
+    return status;
+  } catch (e) {
+    chrome.action.setBadgeBackgroundColor({ color: "#dc2626", tabId });
+    chrome.action.setBadgeText({ text: "!", tabId });
+    throw e;
+  } finally {
+    setTimeout(() => chrome.action.setBadgeText({ text: "", tabId }), 4000);
+  }
+}
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId === "atk-send-page" && tab && tab.id != null) {
+    clipWithBadge(tab.id).catch((e) => console.warn("ATK:", e.message || e));
   }
 });
