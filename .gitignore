@@ -11,3 +11,6 @@ server/node_modules/
 **/*.xcuserstate
 **/DerivedData/
 build/
+
+# Publishing / App Store material (kept out of the public repo)
+publishing/
