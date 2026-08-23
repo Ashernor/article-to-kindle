@@ -13,24 +13,6 @@ const CORS = {
 
 exports.handler = async (event) => {
   if (event.httpMethod === "OPTIONS") return { statusCode: 204, headers: CORS, body: "" };
-
-  // Diagnostic (booléens uniquement, jamais les valeurs) : GET ?check=env
-  if (event.httpMethod === "GET" && event.queryStringParameters && event.queryStringParameters.check === "env") {
-    const present = (k) => Boolean(process.env[k] && String(process.env[k]).length);
-    return {
-      statusCode: 200,
-      headers: { ...CORS, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        SMTP_HOST: present("SMTP_HOST"),
-        SMTP_PORT: present("SMTP_PORT"),
-        SMTP_SECURE: present("SMTP_SECURE"),
-        SMTP_USER: present("SMTP_USER"),
-        SMTP_PASS: present("SMTP_PASS"),
-        SMTP_FROM: present("SMTP_FROM"),
-        HOST_VALUE_LEN: (process.env.SMTP_HOST || "").length,
-      }),
-    };
-  }
   if (event.httpMethod !== "POST")
     return { statusCode: 405, headers: CORS, body: "Method not allowed" };
 
