@@ -1,0 +1,19 @@
+{
+  "name": "article-to-kindle",
+  "version": "0.1.0",
+  "description": "Open-source tool to send web articles to a Kindle as EPUB, from Chrome. Local-first, optional email relay.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node esbuild.mjs",
+    "watch": "node esbuild.mjs --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0",
+    "jszip": "^3.10.1"
+  }
+}

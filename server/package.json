@@ -1,0 +1,8 @@
+{
+  "name": "article-to-kindle-relay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Optional SMTP relay (Netlify Function) for Article → Kindle.",
+  "license": "MIT",
+  "dependencies": { "nodemailer": "^6.9.14" }
+}

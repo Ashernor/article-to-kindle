@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Article → Kindle",
+  "version": "0.1.0",
+  "description": "Envoie l'article de la page courante vers ton Kindle, converti en EPUB. Tout se passe en local ; l'email est optionnel.",
+  "permissions": ["scripting", "downloads", "storage", "activeTab"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "dist/background.js", "type": "module" },
+  "action": {
+    "default_title": "Envoyer vers le Kindle",
+    "default_popup": "popup/popup.html"
+  }
+}
