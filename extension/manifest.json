@@ -3,10 +3,11 @@
   "name": "Article → Kindle",
   "version": "0.1.0",
   "description": "Envoie l'article de la page courante vers ton Kindle, converti en EPUB. Tout se passe en local ; l'email est optionnel.",
-  "permissions": ["scripting", "downloads", "storage", "activeTab", "contextMenus"],
+  "permissions": ["scripting", "downloads", "storage", "activeTab", "contextMenus", "tabs"],
   "host_permissions": ["http://*/*", "https://*/*"],
   "background": { "service_worker": "dist/background.js", "type": "module" },
   "icons": { "16": "icons/icon-16.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" },
+  "options_page": "welcome/welcome.html",
   "action": {
     "default_title": "Envoyer vers le Kindle",
     "default_popup": "popup/popup.html",

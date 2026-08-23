@@ -97,12 +97,15 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
 });
 
 // --- Right-click context menu ---
-chrome.runtime.onInstalled.addListener(() => {
+chrome.runtime.onInstalled.addListener((details) => {
   chrome.contextMenus.create({
     id: "atk-send-page",
     title: "Envoyer vers le Kindle",
     contexts: ["page", "selection"],
   });
+  if (details && details.reason === "install") {
+    chrome.tabs.create({ url: chrome.runtime.getURL("welcome/welcome.html") });
+  }
 });
 
 async function clipWithBadge(tabId) {
