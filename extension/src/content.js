@@ -66,7 +66,7 @@ function extract() {
   const reader = new Readability(docClone, { charThreshold: 300 });
   const parsed = reader.parse();
   if (!parsed || !parsed.content) {
-    return { error: "Impossible d'extraire un article lisible sur cette page." };
+    return { error: chrome.i18n.getMessage("errExtractEmpty") };
   }
 
   // Parse Readability's HTML into a DOM we can walk & serialize as XHTML.

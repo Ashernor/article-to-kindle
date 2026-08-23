@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,32 +9,34 @@
 <body>
   <header><h1>Article → Kindle</h1></header>
 
-  <button id="send" class="primary">Envoyer vers le Kindle</button>
+  <button id="send" class="primary" data-i18n="ctxSend">Send to Kindle</button>
   <p id="status" class="status" role="status"></p>
 
   <details id="settings">
-    <summary>Réglages</summary>
+    <summary data-i18n="settingsSummary">Settings</summary>
 
-    <label>Mode de livraison</label>
+    <label data-i18n="modeLabel">Delivery mode</label>
     <div class="radios">
-      <label><input type="radio" name="mode" value="download" /> Télécharger l'EPUB</label>
-      <label><input type="radio" name="mode" value="relay" /> Envoyer par email (relais)</label>
+      <label><input type="radio" name="mode" value="download" /> <span data-i18n="modeDownload">Download the EPUB</span></label>
+      <label><input type="radio" name="mode" value="relay" /> <span data-i18n="modeEmail">Send by email (relay)</span></label>
     </div>
 
     <div class="relay-only">
-      <label for="kindleEmail">Adresse Kindle (@kindle.com)</label>
-      <input id="kindleEmail" type="email" placeholder="prenom_xxxx@kindle.com" />
+      <label for="kindleEmail" data-i18n="kindleEmailLabel">Kindle address (@kindle.com)</label>
+      <input id="kindleEmail" type="email" placeholder="firstname_xxxx@kindle.com" />
 
-      <label for="relayUrl">URL du relais (Netlify)</label>
-      <input id="relayUrl" type="url" placeholder="https://mon-relais.netlify.app/.netlify/functions/send" />
-      <label for="relayToken">Token du relais (optionnel)</label>
-      <input id="relayToken" type="text" placeholder="si RELAY_TOKEN est defini" />
-      <p class="hint">L'expéditeur configuré sur ton relais doit être dans la liste
-        « Approved Personal Document E-mail List » d'Amazon.</p>
+      <label for="relayUrl" data-i18n="relayUrlLabel">Relay URL (Netlify)</label>
+      <input id="relayUrl" type="url" placeholder="https://my-relay.netlify.app/.netlify/functions/send" />
+
+      <label for="relayToken" data-i18n="relayTokenLabel">Relay token (optional)</label>
+      <input id="relayToken" type="text" data-i18n-ph="relayTokenPh" placeholder="if RELAY_TOKEN is set" />
+
+      <p class="hint" data-i18n="relayHint">The sender configured on your relay must be on Amazon's approved list.</p>
     </div>
 
-    <button id="save" class="secondary">Enregistrer</button>
+    <button id="save" class="secondary" data-i18n="saveBtn">Save</button>
   </details>
+
   <script src="popup.js"></script>
 </body>
 </html>

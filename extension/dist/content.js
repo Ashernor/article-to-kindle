@@ -1963,7 +1963,7 @@
     const reader = new import_readability.Readability(docClone, { charThreshold: 300 });
     const parsed = reader.parse();
     if (!parsed || !parsed.content) {
-      return { error: "Impossible d'extraire un article lisible sur cette page." };
+      return { error: chrome.i18n.getMessage("errExtractEmpty") };
     }
     const doc = new DOMParser().parseFromString(
       `<div id="atk-root">${parsed.content}</div>`,

@@ -1,5 +1,17 @@
 const DEFAULTS = { kindleEmail: "", mode: "download", relayUrl: "", relayToken: "" };
 const $ = (id) => document.getElementById(id);
+const t = (k, s) => chrome.i18n.getMessage(k, s) || k;
+
+function applyI18n() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const m = t(el.getAttribute("data-i18n"));
+    if (m) el.textContent = m;
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+    const m = t(el.getAttribute("data-i18n-ph"));
+    if (m) el.setAttribute("placeholder", m);
+  });
+}
 
 function setStatus(text, kind) {
   const el = $("status");
@@ -30,17 +42,17 @@ async function save() {
     relayUrl: $("relayUrl").value.trim(),
     relayToken: $("relayToken").value.trim(),
   });
-  setStatus("Réglages enregistrés.", "ok");
+  setStatus(t("savedOk"), "ok");
 }
 
 async function send() {
-  setStatus("Extraction et conversion…");
+  setStatus(t("statusWorking"));
   $("send").disabled = true;
   try {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (!tab || !/^https?:/.test(tab.url || "")) throw new Error("Ouvre d'abord une page web (http/https).");
+    if (!tab || !/^https?:/.test(tab.url || "")) throw new Error(t("errNotWebPage"));
     const res = await chrome.runtime.sendMessage({ type: "ATK_CLIP", tabId: tab.id });
-    if (!res || !res.ok) throw new Error(res ? res.error : "Erreur inconnue.");
+    if (!res || !res.ok) throw new Error(res ? res.error : "Error");
     setStatus("✓ " + res.status, "ok");
   } catch (e) {
     setStatus("✗ " + (e.message || e), "err");
@@ -50,6 +62,7 @@ async function send() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  applyI18n();
   load();
   $("send").addEventListener("click", send);
   $("save").addEventListener("click", save);

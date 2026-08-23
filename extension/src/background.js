@@ -1,9 +1,10 @@
 // MV3 service worker: orchestrates clip -> fetch images -> build EPUB -> deliver.
-// Written to run on both Chromium and Safari (which lacks downloads/contextMenus).
+// Runs on both Chromium and Safari (which lacks downloads/contextMenus).
 import { buildEpub, slugifyFilename } from "./lib/epub.js";
 
 const DEFAULTS = { kindleEmail: "", mode: "download", relayUrl: "", relayToken: "" };
 const HAS_DOWNLOADS = typeof chrome !== "undefined" && !!(chrome.downloads && chrome.downloads.download);
+const t = (k, s) => chrome.i18n.getMessage(k, s) || k;
 
 async function getSettings() {
   const s = await chrome.storage.sync.get(DEFAULTS);
@@ -50,19 +51,15 @@ async function extractFromTab(tabId) {
 }
 
 async function deliverDownload(blob, filename) {
-  if (!HAS_DOWNLOADS) {
-    throw new Error(
-      "Ce navigateur (Safari) ne permet pas le téléchargement direct. Passe en mode « Envoyer par email » dans les réglages."
-    );
-  }
+  if (!HAS_DOWNLOADS) throw new Error(t("errDownloadUnsupported"));
   const dataUrl = await blobToDataURL(blob);
   await chrome.downloads.download({ url: dataUrl, filename, saveAs: false });
-  return `EPUB téléchargé : ${filename}`;
+  return t("statusDownloaded", [filename]);
 }
 
 async function deliverRelay(blob, filename, settings) {
-  if (!settings.relayUrl) throw new Error("Aucune URL de relais configurée.");
-  if (!settings.kindleEmail) throw new Error("Aucune adresse Kindle configurée.");
+  if (!settings.relayUrl) throw new Error(t("errNoRelayUrl"));
+  if (!settings.kindleEmail) throw new Error(t("errNoKindle"));
   const dataUrl = await blobToDataURL(blob); // data:...;base64,XXXX
   const base64 = String(dataUrl).split(",")[1] || "";
   const res = await fetch(settings.relayUrl, {
@@ -76,8 +73,8 @@ async function deliverRelay(blob, filename, settings) {
     }),
   });
   const text = await res.text();
-  if (!res.ok) throw new Error(`Relais: ${res.status} ${text.slice(0, 200)}`);
-  return `Envoyé à ${settings.kindleEmail}`;
+  if (!res.ok) throw new Error(`Relay: ${res.status} ${text.slice(0, 200)}`);
+  return t("statusSent", [settings.kindleEmail]);
 }
 
 async function clip(tabId) {
@@ -86,7 +83,7 @@ async function clip(tabId) {
   const mode = settings.mode === "download" && !HAS_DOWNLOADS && settings.relayUrl ? "relay" : settings.mode;
 
   const article = await extractFromTab(tabId);
-  if (!article || article.error) throw new Error(article ? article.error : "Extraction vide.");
+  if (!article || article.error) throw new Error(article ? article.error : t("errExtractEmpty"));
 
   const images = await fetchImages(article.imageRefs || []);
   const blob = await buildEpub({ ...article, images });
@@ -112,7 +109,7 @@ chrome.runtime.onInstalled.addListener((details) => {
     try {
       chrome.contextMenus.create({
         id: "atk-send-page",
-        title: "Envoyer vers le Kindle",
+        title: t("ctxSend"),
         contexts: ["page", "selection"],
       });
     } catch (_) {

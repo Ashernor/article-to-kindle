@@ -1,5 +1,17 @@
 const DEFAULTS = { kindleEmail: "", mode: "download", relayUrl: "", relayToken: "" };
 const $ = (id) => document.getElementById(id);
+const t = (k, s) => chrome.i18n.getMessage(k, s) || k;
+
+function applyI18n() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const m = t(el.getAttribute("data-i18n"));
+    if (m) el.textContent = m;
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+    const m = t(el.getAttribute("data-i18n-ph"));
+    if (m) el.setAttribute("placeholder", m);
+  });
+}
 
 function setStatus(text, kind) {
   const el = $("status");
@@ -30,10 +42,11 @@ async function save() {
     relayUrl: $("relayUrl").value.trim(),
     relayToken: $("relayToken").value.trim(),
   });
-  setStatus("✓ Réglages enregistrés.", "ok");
+  setStatus("✓ " + t("savedOk"), "ok");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  applyI18n();
   load();
   $("save").addEventListener("click", save);
   document.querySelectorAll('input[name="mode"]').forEach((r) =>

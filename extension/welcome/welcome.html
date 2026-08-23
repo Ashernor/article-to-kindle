@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Article → Kindle — Bienvenue</title>
+  <title>Article → Kindle</title>
   <style>
     :root { color-scheme: light dark; }
     body { font: 15px/1.5 system-ui, -apple-system, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; }
@@ -20,47 +20,43 @@
     .status { margin-top: 10px; font-size: 14px; min-height: 1.2em; }
     .status.ok { color: #059669; } .status.err { color: #dc2626; }
     .hint { font-size: 12px; color: #6b7280; }
-    code { background: #8882; padding: 1px 5px; border-radius: 4px; }
     a { color: #d97706; }
   </style>
 </head>
 <body>
   <h1><img src="../icons/icon-128.png" alt="" /> Article → Kindle</h1>
-  <p>Envoie l'article que tu lis vers ton Kindle, converti en <strong>EPUB</strong> propre.
-     Tout se passe en local dans ton navigateur ; l'envoi par email est optionnel.</p>
+  <p data-i18n="welcomeIntro">Send the article you're reading to your Kindle as a clean EPUB.</p>
 
-  <h2>Comment l'utiliser</h2>
+  <h2 data-i18n="welcomeHowto">How to use it</h2>
   <ol>
-    <li>Ouvre un article (blog, presse…).</li>
-    <li>Clique l'icône <em>Article → Kindle</em> dans la barre d'outils, ou fais un clic droit → « Envoyer vers le Kindle ».</li>
-    <li>En mode <strong>Télécharger</strong>, l'<code>.epub</code> arrive dans tes Téléchargements. En mode <strong>Email</strong>, il part vers ton Kindle.</li>
+    <li data-i18n="welcomeStep1">Open an article.</li>
+    <li data-i18n="welcomeStep2">Click the toolbar icon, or right-click.</li>
+    <li data-i18n="welcomeStep3">Download or email the EPUB to your Kindle.</li>
   </ol>
 
   <div class="card">
-    <h2 style="margin-top:0">Réglages</h2>
-    <label>Mode de livraison</label>
+    <h2 style="margin-top:0" data-i18n="settingsSummary">Settings</h2>
+    <label data-i18n="modeLabel">Delivery mode</label>
     <div class="radios">
-      <label><input type="radio" name="mode" value="download" /> Télécharger l'EPUB (par défaut, 100% local)</label>
-      <label><input type="radio" name="mode" value="relay" /> Envoyer par email vers le Kindle (relais)</label>
+      <label><input type="radio" name="mode" value="download" /> <span data-i18n="welcomeModeDownloadLong">Download the EPUB (default, 100% local)</span></label>
+      <label><input type="radio" name="mode" value="relay" /> <span data-i18n="welcomeModeEmailLong">Send by email to the Kindle (relay)</span></label>
     </div>
 
     <div class="relay-only">
-      <label for="kindleEmail">Adresse Kindle (@kindle.com)</label>
-      <input id="kindleEmail" type="email" placeholder="prenom_xxxx@kindle.com" />
-      <label for="relayUrl">URL du relais (Netlify)</label>
-      <input id="relayUrl" type="url" placeholder="https://mon-relais.netlify.app/.netlify/functions/send" />
-      <label for="relayToken">Token du relais (optionnel)</label>
-      <input id="relayToken" type="text" placeholder="si RELAY_TOKEN est défini" />
-      <p class="hint">L'expéditeur de ton relais doit être dans la liste « Approved Personal Document E-mail List » d'Amazon,
-         et ton adresse Kindle se trouve dans <em>Manage Your Content and Devices</em>.</p>
+      <label for="kindleEmail" data-i18n="kindleEmailLabel">Kindle address (@kindle.com)</label>
+      <input id="kindleEmail" type="email" placeholder="firstname_xxxx@kindle.com" />
+      <label for="relayUrl" data-i18n="relayUrlLabel">Relay URL (Netlify)</label>
+      <input id="relayUrl" type="url" placeholder="https://my-relay.netlify.app/.netlify/functions/send" />
+      <label for="relayToken" data-i18n="relayTokenLabel">Relay token (optional)</label>
+      <input id="relayToken" type="text" data-i18n-ph="relayTokenPh" placeholder="if RELAY_TOKEN is set" />
+      <p class="hint" data-i18n="welcomeRelayHint">The relay sender must be approved on Amazon.</p>
     </div>
 
-    <button id="save">Enregistrer</button>
+    <button id="save" data-i18n="saveBtn">Save</button>
     <p id="status" class="status" role="status"></p>
   </div>
 
-  <p class="hint" style="margin-top:20px">Tes réglages sont conservés (stockage synchronisé Chrome) et réutilisés à chaque envoi.
-     Tu peux les rouvrir à tout moment via clic droit sur l'icône → <em>Options</em>.</p>
+  <p class="hint" style="margin-top:20px" data-i18n="welcomeFooter">Your settings are saved and reused for every send.</p>
 
   <script src="welcome.js"></script>
 </body>
