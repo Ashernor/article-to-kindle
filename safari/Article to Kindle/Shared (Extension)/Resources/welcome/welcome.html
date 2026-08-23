@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Article → Kindle — Bienvenue</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font: 15px/1.5 system-ui, -apple-system, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; }
+    h1 { font-size: 22px; display: flex; align-items: center; gap: 10px; }
+    h1 img { width: 32px; height: 32px; }
+    h2 { font-size: 16px; margin-top: 28px; }
+    ol { padding-left: 20px; } li { margin: 6px 0; }
+    .card { border: 1px solid #8884; border-radius: 10px; padding: 16px 18px; margin-top: 18px; }
+    label { display: block; margin: 12px 0 4px; font-size: 13px; color: #6b7280; }
+    input[type=email], input[type=url], input[type=text] { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #9ca3af; border-radius: 6px; background: transparent; color: inherit; }
+    .radios label { display: block; margin: 6px 0; color: inherit; font-size: 15px; }
+    .relay-only.hidden { display: none; }
+    button { margin-top: 14px; padding: 10px 16px; border: 0; border-radius: 8px; background: #d97706; color: #fff; font-weight: 600; cursor: pointer; }
+    .status { margin-top: 10px; font-size: 14px; min-height: 1.2em; }
+    .status.ok { color: #059669; } .status.err { color: #dc2626; }
+    .hint { font-size: 12px; color: #6b7280; }
+    code { background: #8882; padding: 1px 5px; border-radius: 4px; }
+    a { color: #d97706; }
+  </style>
+</head>
+<body>
+  <h1><img src="../icons/icon-128.png" alt="" /> Article → Kindle</h1>
+  <p>Envoie l'article que tu lis vers ton Kindle, converti en <strong>EPUB</strong> propre.
+     Tout se passe en local dans ton navigateur ; l'envoi par email est optionnel.</p>
+
+  <h2>Comment l'utiliser</h2>
+  <ol>
+    <li>Ouvre un article (blog, presse…).</li>
+    <li>Clique l'icône <em>Article → Kindle</em> dans la barre d'outils, ou fais un clic droit → « Envoyer vers le Kindle ».</li>
+    <li>En mode <strong>Télécharger</strong>, l'<code>.epub</code> arrive dans tes Téléchargements. En mode <strong>Email</strong>, il part vers ton Kindle.</li>
+  </ol>
+
+  <div class="card">
+    <h2 style="margin-top:0">Réglages</h2>
+    <label>Mode de livraison</label>
+    <div class="radios">
+      <label><input type="radio" name="mode" value="download" /> Télécharger l'EPUB (par défaut, 100% local)</label>
+      <label><input type="radio" name="mode" value="relay" /> Envoyer par email vers le Kindle (relais)</label>
+    </div>
+
+    <div class="relay-only">
+      <label for="kindleEmail">Adresse Kindle (@kindle.com)</label>
+      <input id="kindleEmail" type="email" placeholder="prenom_xxxx@kindle.com" />
+      <label for="relayUrl">URL du relais (Netlify)</label>
+      <input id="relayUrl" type="url" placeholder="https://mon-relais.netlify.app/.netlify/functions/send" />
+      <label for="relayToken">Token du relais (optionnel)</label>
+      <input id="relayToken" type="text" placeholder="si RELAY_TOKEN est défini" />
+      <p class="hint">L'expéditeur de ton relais doit être dans la liste « Approved Personal Document E-mail List » d'Amazon,
+         et ton adresse Kindle se trouve dans <em>Manage Your Content and Devices</em>.</p>
+    </div>
+
+    <button id="save">Enregistrer</button>
+    <p id="status" class="status" role="status"></p>
+  </div>
+
+  <p class="hint" style="margin-top:20px">Tes réglages sont conservés (stockage synchronisé Chrome) et réutilisés à chaque envoi.
+     Tu peux les rouvrir à tout moment via clic droit sur l'icône → <em>Options</em>.</p>
+
+  <script src="welcome.js"></script>
+</body>
+</html>

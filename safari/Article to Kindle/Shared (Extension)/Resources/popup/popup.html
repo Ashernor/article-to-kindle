@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>Article → Kindle</title>
+</head>
+<body>
+  <header><h1>Article → Kindle</h1></header>
+
+  <button id="send" class="primary">Envoyer vers le Kindle</button>
+  <p id="status" class="status" role="status"></p>
+
+  <details id="settings">
+    <summary>Réglages</summary>
+
+    <label>Mode de livraison</label>
+    <div class="radios">
+      <label><input type="radio" name="mode" value="download" /> Télécharger l'EPUB</label>
+      <label><input type="radio" name="mode" value="relay" /> Envoyer par email (relais)</label>
+    </div>
+
+    <div class="relay-only">
+      <label for="kindleEmail">Adresse Kindle (@kindle.com)</label>
+      <input id="kindleEmail" type="email" placeholder="prenom_xxxx@kindle.com" />
+
+      <label for="relayUrl">URL du relais (Netlify)</label>
+      <input id="relayUrl" type="url" placeholder="https://mon-relais.netlify.app/.netlify/functions/send" />
+      <label for="relayToken">Token du relais (optionnel)</label>
+      <input id="relayToken" type="text" placeholder="si RELAY_TOKEN est defini" />
+      <p class="hint">L'expéditeur configuré sur ton relais doit être dans la liste
+        « Approved Personal Document E-mail List » d'Amazon.</p>
+    </div>
+
+    <button id="save" class="secondary">Enregistrer</button>
+  </details>
+  <script src="popup.js"></script>
+</body>
+</html>

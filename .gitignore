@@ -5,3 +5,9 @@ server/node_modules/
 .DS_Store
 *.log
 .netlify/
+
+# Xcode
+**/xcuserdata/
+**/*.xcuserstate
+**/DerivedData/
+build/

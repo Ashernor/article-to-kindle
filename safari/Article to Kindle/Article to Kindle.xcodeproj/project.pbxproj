@@ -1,0 +1,993 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C81B05C303B758A00B3AAFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C81B05B303B758A00B3AAFE /* AppDelegate.swift */; };
+		5C81B05E303B758A00B3AAFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C81B05D303B758A00B3AAFE /* SceneDelegate.swift */; };
+		5C81B061303B758A00B3AAFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B05F303B758A00B3AAFE /* LaunchScreen.storyboard */; };
+		5C81B064303B758A00B3AAFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B062303B758A00B3AAFE /* Main.storyboard */; };
+		5C81B06D303B758A00B3AAFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C81B06C303B758A00B3AAFE /* AppDelegate.swift */; };
+		5C81B070303B758A00B3AAFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B06E303B758A00B3AAFE /* Main.storyboard */; };
+		5C81B077303B758A00B3AAFE /* Article to Kindle Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5C81B076303B758A00B3AAFE /* Article to Kindle Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C81B081303B758A00B3AAFE /* Article to Kindle Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5C81B080303B758A00B3AAFE /* Article to Kindle Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C81B086303B758A00B3AAFE /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B04B303B758900B3AAFE /* Main.html */; };
+		5C81B087303B758A00B3AAFE /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B04B303B758900B3AAFE /* Main.html */; };
+		5C81B088303B758A00B3AAFE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B04D303B758900B3AAFE /* Icon.png */; };
+		5C81B089303B758A00B3AAFE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B04D303B758900B3AAFE /* Icon.png */; };
+		5C81B08A303B758A00B3AAFE /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B04E303B758900B3AAFE /* Style.css */; };
+		5C81B08B303B758A00B3AAFE /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B04E303B758900B3AAFE /* Style.css */; };
+		5C81B08C303B758A00B3AAFE /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B04F303B758900B3AAFE /* Script.js */; };
+		5C81B08D303B758A00B3AAFE /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B04F303B758900B3AAFE /* Script.js */; };
+		5C81B08E303B758A00B3AAFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C81B050303B758900B3AAFE /* ViewController.swift */; };
+		5C81B08F303B758A00B3AAFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C81B050303B758900B3AAFE /* ViewController.swift */; };
+		5C81B090303B758A00B3AAFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B051303B758A00B3AAFE /* Assets.xcassets */; };
+		5C81B091303B758A00B3AAFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B051303B758A00B3AAFE /* Assets.xcassets */; };
+		5C81B092303B758A00B3AAFE /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C81B053303B758A00B3AAFE /* SafariWebExtensionHandler.swift */; };
+		5C81B093303B758A00B3AAFE /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C81B053303B758A00B3AAFE /* SafariWebExtensionHandler.swift */; };
+		5C81B0AB303B758A00B3AAFE /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A5303B758A00B3AAFE /* popup */; };
+		5C81B0AC303B758A00B3AAFE /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A6303B758A00B3AAFE /* dist */; };
+		5C81B0AD303B758A00B3AAFE /* welcome in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A7303B758A00B3AAFE /* welcome */; };
+		5C81B0AE303B758A00B3AAFE /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A8303B758A00B3AAFE /* icons */; };
+		5C81B0AF303B758A00B3AAFE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A9303B758A00B3AAFE /* manifest.json */; };
+		5C81B0B0303B758A00B3AAFE /* src in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0AA303B758A00B3AAFE /* src */; };
+		5C81B0B1303B758A00B3AAFE /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A5303B758A00B3AAFE /* popup */; };
+		5C81B0B2303B758A00B3AAFE /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A6303B758A00B3AAFE /* dist */; };
+		5C81B0B3303B758A00B3AAFE /* welcome in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A7303B758A00B3AAFE /* welcome */; };
+		5C81B0B4303B758A00B3AAFE /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A8303B758A00B3AAFE /* icons */; };
+		5C81B0B5303B758A00B3AAFE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0A9303B758A00B3AAFE /* manifest.json */; };
+		5C81B0B6303B758A00B3AAFE /* src in Resources */ = {isa = PBXBuildFile; fileRef = 5C81B0AA303B758A00B3AAFE /* src */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C81B078303B758A00B3AAFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C81B045303B758900B3AAFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C81B075303B758A00B3AAFE;
+			remoteInfo = "Article to Kindle Extension (iOS)";
+		};
+		5C81B082303B758A00B3AAFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C81B045303B758900B3AAFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C81B07F303B758A00B3AAFE;
+			remoteInfo = "Article to Kindle Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5C81B099303B758A00B3AAFE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5C81B077303B758A00B3AAFE /* Article to Kindle Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B0A0303B758A00B3AAFE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5C81B081303B758A00B3AAFE /* Article to Kindle Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5C81B04C303B758900B3AAFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		5C81B04D303B758900B3AAFE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		5C81B04E303B758900B3AAFE /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		5C81B04F303B758900B3AAFE /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		5C81B050303B758900B3AAFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C81B051303B758A00B3AAFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C81B053303B758A00B3AAFE /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		5C81B058303B758A00B3AAFE /* Article to Kindle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Article to Kindle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C81B05B303B758A00B3AAFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C81B05D303B758A00B3AAFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5C81B060303B758A00B3AAFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C81B063303B758A00B3AAFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C81B065303B758A00B3AAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C81B06A303B758A00B3AAFE /* Article to Kindle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Article to Kindle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C81B06C303B758A00B3AAFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C81B06F303B758A00B3AAFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C81B071303B758A00B3AAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C81B076303B758A00B3AAFE /* Article to Kindle Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Article to Kindle Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C81B07B303B758A00B3AAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C81B080303B758A00B3AAFE /* Article to Kindle Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Article to Kindle Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C81B085303B758A00B3AAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C81B0A5303B758A00B3AAFE /* popup */ = {isa = PBXFileReference; lastKnownFileType = folder; name = popup; path = Resources/popup; sourceTree = "<group>"; };
+		5C81B0A6303B758A00B3AAFE /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = Resources/dist; sourceTree = "<group>"; };
+		5C81B0A7303B758A00B3AAFE /* welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; name = welcome; path = Resources/welcome; sourceTree = "<group>"; };
+		5C81B0A8303B758A00B3AAFE /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
+		5C81B0A9303B758A00B3AAFE /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
+		5C81B0AA303B758A00B3AAFE /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = Resources/src; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C81B055303B758A00B3AAFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B067303B758A00B3AAFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B073303B758A00B3AAFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B07D303B758A00B3AAFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C81B044303B758900B3AAFE = {
+			isa = PBXGroup;
+			children = (
+				5C81B049303B758900B3AAFE /* Shared (App) */,
+				5C81B052303B758A00B3AAFE /* Shared (Extension) */,
+				5C81B05A303B758A00B3AAFE /* iOS (App) */,
+				5C81B06B303B758A00B3AAFE /* macOS (App) */,
+				5C81B07A303B758A00B3AAFE /* iOS (Extension) */,
+				5C81B084303B758A00B3AAFE /* macOS (Extension) */,
+				5C81B059303B758A00B3AAFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C81B049303B758900B3AAFE /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				5C81B050303B758900B3AAFE /* ViewController.swift */,
+				5C81B051303B758A00B3AAFE /* Assets.xcassets */,
+				5C81B04A303B758900B3AAFE /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		5C81B04A303B758900B3AAFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C81B04B303B758900B3AAFE /* Main.html */,
+				5C81B04D303B758900B3AAFE /* Icon.png */,
+				5C81B04E303B758900B3AAFE /* Style.css */,
+				5C81B04F303B758900B3AAFE /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5C81B052303B758A00B3AAFE /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				5C81B0A4303B758A00B3AAFE /* Resources */,
+				5C81B053303B758A00B3AAFE /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		5C81B059303B758A00B3AAFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C81B058303B758A00B3AAFE /* Article to Kindle.app */,
+				5C81B06A303B758A00B3AAFE /* Article to Kindle.app */,
+				5C81B076303B758A00B3AAFE /* Article to Kindle Extension.appex */,
+				5C81B080303B758A00B3AAFE /* Article to Kindle Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C81B05A303B758A00B3AAFE /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				5C81B05B303B758A00B3AAFE /* AppDelegate.swift */,
+				5C81B05D303B758A00B3AAFE /* SceneDelegate.swift */,
+				5C81B05F303B758A00B3AAFE /* LaunchScreen.storyboard */,
+				5C81B062303B758A00B3AAFE /* Main.storyboard */,
+				5C81B065303B758A00B3AAFE /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		5C81B06B303B758A00B3AAFE /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				5C81B06C303B758A00B3AAFE /* AppDelegate.swift */,
+				5C81B06E303B758A00B3AAFE /* Main.storyboard */,
+				5C81B071303B758A00B3AAFE /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		5C81B07A303B758A00B3AAFE /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				5C81B07B303B758A00B3AAFE /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		5C81B084303B758A00B3AAFE /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				5C81B085303B758A00B3AAFE /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		5C81B0A4303B758A00B3AAFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C81B0A5303B758A00B3AAFE /* popup */,
+				5C81B0A6303B758A00B3AAFE /* dist */,
+				5C81B0A7303B758A00B3AAFE /* welcome */,
+				5C81B0A8303B758A00B3AAFE /* icons */,
+				5C81B0A9303B758A00B3AAFE /* manifest.json */,
+				5C81B0AA303B758A00B3AAFE /* src */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C81B057303B758A00B3AAFE /* Article to Kindle (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C81B09A303B758A00B3AAFE /* Build configuration list for PBXNativeTarget "Article to Kindle (iOS)" */;
+			buildPhases = (
+				5C81B054303B758A00B3AAFE /* Sources */,
+				5C81B055303B758A00B3AAFE /* Frameworks */,
+				5C81B056303B758A00B3AAFE /* Resources */,
+				5C81B099303B758A00B3AAFE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C81B079303B758A00B3AAFE /* PBXTargetDependency */,
+			);
+			name = "Article to Kindle (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Article to Kindle (iOS)";
+			productReference = 5C81B058303B758A00B3AAFE /* Article to Kindle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C81B069303B758A00B3AAFE /* Article to Kindle (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C81B0A1303B758A00B3AAFE /* Build configuration list for PBXNativeTarget "Article to Kindle (macOS)" */;
+			buildPhases = (
+				5C81B066303B758A00B3AAFE /* Sources */,
+				5C81B067303B758A00B3AAFE /* Frameworks */,
+				5C81B068303B758A00B3AAFE /* Resources */,
+				5C81B0A0303B758A00B3AAFE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C81B083303B758A00B3AAFE /* PBXTargetDependency */,
+			);
+			name = "Article to Kindle (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Article to Kindle (macOS)";
+			productReference = 5C81B06A303B758A00B3AAFE /* Article to Kindle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C81B075303B758A00B3AAFE /* Article to Kindle Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C81B096303B758A00B3AAFE /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (iOS)" */;
+			buildPhases = (
+				5C81B072303B758A00B3AAFE /* Sources */,
+				5C81B073303B758A00B3AAFE /* Frameworks */,
+				5C81B074303B758A00B3AAFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Article to Kindle Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Article to Kindle Extension (iOS)";
+			productReference = 5C81B076303B758A00B3AAFE /* Article to Kindle Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5C81B07F303B758A00B3AAFE /* Article to Kindle Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C81B09D303B758A00B3AAFE /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (macOS)" */;
+			buildPhases = (
+				5C81B07C303B758A00B3AAFE /* Sources */,
+				5C81B07D303B758A00B3AAFE /* Frameworks */,
+				5C81B07E303B758A00B3AAFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Article to Kindle Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Article to Kindle Extension (macOS)";
+			productReference = 5C81B080303B758A00B3AAFE /* Article to Kindle Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C81B045303B758900B3AAFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					5C81B057303B758A00B3AAFE = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					5C81B069303B758A00B3AAFE = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					5C81B075303B758A00B3AAFE = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					5C81B07F303B758A00B3AAFE = {
+						CreatedOnToolsVersion = 26.6;
+					};
+				};
+			};
+			buildConfigurationList = 5C81B048303B758900B3AAFE /* Build configuration list for PBXProject "Article to Kindle" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C81B044303B758900B3AAFE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5C81B059303B758A00B3AAFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C81B057303B758A00B3AAFE /* Article to Kindle (iOS) */,
+				5C81B069303B758A00B3AAFE /* Article to Kindle (macOS) */,
+				5C81B075303B758A00B3AAFE /* Article to Kindle Extension (iOS) */,
+				5C81B07F303B758A00B3AAFE /* Article to Kindle Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C81B056303B758A00B3AAFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C81B088303B758A00B3AAFE /* Icon.png in Resources */,
+				5C81B061303B758A00B3AAFE /* LaunchScreen.storyboard in Resources */,
+				5C81B086303B758A00B3AAFE /* Main.html in Resources */,
+				5C81B08C303B758A00B3AAFE /* Script.js in Resources */,
+				5C81B090303B758A00B3AAFE /* Assets.xcassets in Resources */,
+				5C81B064303B758A00B3AAFE /* Main.storyboard in Resources */,
+				5C81B08A303B758A00B3AAFE /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B068303B758A00B3AAFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C81B089303B758A00B3AAFE /* Icon.png in Resources */,
+				5C81B08B303B758A00B3AAFE /* Style.css in Resources */,
+				5C81B070303B758A00B3AAFE /* Main.storyboard in Resources */,
+				5C81B08D303B758A00B3AAFE /* Script.js in Resources */,
+				5C81B091303B758A00B3AAFE /* Assets.xcassets in Resources */,
+				5C81B087303B758A00B3AAFE /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B074303B758A00B3AAFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C81B0B3303B758A00B3AAFE /* welcome in Resources */,
+				5C81B0B4303B758A00B3AAFE /* icons in Resources */,
+				5C81B0B5303B758A00B3AAFE /* manifest.json in Resources */,
+				5C81B0B6303B758A00B3AAFE /* src in Resources */,
+				5C81B0B2303B758A00B3AAFE /* dist in Resources */,
+				5C81B0B1303B758A00B3AAFE /* popup in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B07E303B758A00B3AAFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C81B0AD303B758A00B3AAFE /* welcome in Resources */,
+				5C81B0AE303B758A00B3AAFE /* icons in Resources */,
+				5C81B0AF303B758A00B3AAFE /* manifest.json in Resources */,
+				5C81B0B0303B758A00B3AAFE /* src in Resources */,
+				5C81B0AC303B758A00B3AAFE /* dist in Resources */,
+				5C81B0AB303B758A00B3AAFE /* popup in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C81B054303B758A00B3AAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C81B08E303B758A00B3AAFE /* ViewController.swift in Sources */,
+				5C81B05C303B758A00B3AAFE /* AppDelegate.swift in Sources */,
+				5C81B05E303B758A00B3AAFE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B066303B758A00B3AAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C81B08F303B758A00B3AAFE /* ViewController.swift in Sources */,
+				5C81B06D303B758A00B3AAFE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B072303B758A00B3AAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C81B092303B758A00B3AAFE /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C81B07C303B758A00B3AAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C81B093303B758A00B3AAFE /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C81B079303B758A00B3AAFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C81B075303B758A00B3AAFE /* Article to Kindle Extension (iOS) */;
+			targetProxy = 5C81B078303B758A00B3AAFE /* PBXContainerItemProxy */;
+		};
+		5C81B083303B758A00B3AAFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C81B07F303B758A00B3AAFE /* Article to Kindle Extension (macOS) */;
+			targetProxy = 5C81B082303B758A00B3AAFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5C81B04B303B758900B3AAFE /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C81B04C303B758900B3AAFE /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		5C81B05F303B758A00B3AAFE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C81B060303B758A00B3AAFE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5C81B062303B758A00B3AAFE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C81B063303B758A00B3AAFE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C81B06E303B758A00B3AAFE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C81B06F303B758A00B3AAFE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C81B094303B758A00B3AAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C81B095303B758A00B3AAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		5C81B097303B758A00B3AAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Article to Kindle Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle.Extension;
+				PRODUCT_NAME = "Article to Kindle Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C81B098303B758A00B3AAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Article to Kindle Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle.Extension;
+				PRODUCT_NAME = "Article to Kindle Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C81B09B303B758A00B3AAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Article to Kindle";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle;
+				PRODUCT_NAME = "Article to Kindle";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C81B09C303B758A00B3AAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Article to Kindle";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle;
+				PRODUCT_NAME = "Article to Kindle";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C81B09E303B758A00B3AAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Article to Kindle Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle.Extension;
+				PRODUCT_NAME = "Article to Kindle Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5C81B09F303B758A00B3AAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Article to Kindle Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle.Extension;
+				PRODUCT_NAME = "Article to Kindle Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5C81B0A2303B758A00B3AAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Article to Kindle";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle;
+				PRODUCT_NAME = "Article to Kindle";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5C81B0A3303B758A00B3AAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Article to Kindle";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle;
+				PRODUCT_NAME = "Article to Kindle";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C81B048303B758900B3AAFE /* Build configuration list for PBXProject "Article to Kindle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C81B094303B758A00B3AAFE /* Debug */,
+				5C81B095303B758A00B3AAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C81B096303B758A00B3AAFE /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C81B097303B758A00B3AAFE /* Debug */,
+				5C81B098303B758A00B3AAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C81B09A303B758A00B3AAFE /* Build configuration list for PBXNativeTarget "Article to Kindle (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C81B09B303B758A00B3AAFE /* Debug */,
+				5C81B09C303B758A00B3AAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C81B09D303B758A00B3AAFE /* Build configuration list for PBXNativeTarget "Article to Kindle Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C81B09E303B758A00B3AAFE /* Debug */,
+				5C81B09F303B758A00B3AAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C81B0A1303B758A00B3AAFE /* Build configuration list for PBXNativeTarget "Article to Kindle (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C81B0A2303B758A00B3AAFE /* Debug */,
+				5C81B0A3303B758A00B3AAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C81B045303B758900B3AAFE /* Project object */;
+}

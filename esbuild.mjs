@@ -9,7 +9,7 @@ const common = {
 };
 
 const builds = [
-  { entryPoints: ["extension/src/background.js"], outfile: "extension/dist/background.js", ...common },
+  { entryPoints: ["extension/src/background.js"], outfile: "extension/dist/background.js", ...common, format: "iife" },
   // content script is injected via chrome.scripting; IIFE so it runs standalone.
   { entryPoints: ["extension/src/content.js"], outfile: "extension/dist/content.js", ...common, format: "iife" },
 ];
