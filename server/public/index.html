@@ -1,8 +1,94 @@
-<!DOCTYPE html><html lang="en"><meta charset="utf-8">
-<title>Article → Kindle relay</title>
-<body style="font:16px system-ui;max-width:40em;margin:3em auto;padding:0 1em">
-<h1>Article → Kindle — relay</h1>
-<p>This is a private SMTP relay for the
-<a href="https://github.com/">Article → Kindle</a> browser extension.
-The email endpoint is <code>/.netlify/functions/send</code>.</p>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Article → Kindle — send web articles to your Kindle as EPUB</title>
+<meta name="description" content="Free, open-source tool to send the web article you're reading to your Kindle as a clean EPUB. Local-first. Chrome, Edge, Brave and Safari (macOS + iOS)." />
+<style>
+  :root { color-scheme: light dark;
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#6b7280; --border:#e5e5ea; --card:#fafafa; --accent:#d97706; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#f2f2f7; --muted:#9ca3af; --border:#2c2c2e; --card:#1c1c1e; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:17px/1.6 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--fg); }
+  .wrap { max-width:760px; margin:0 auto; padding:0 22px; }
+  header { text-align:center; padding:64px 0 40px; }
+  header img { width:84px; height:84px; }
+  h1 { font-size:34px; margin:16px 0 6px; letter-spacing:-.5px; }
+  .tag { font-size:19px; color:var(--muted); max-width:34ch; margin:0 auto; }
+  .cta { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:28px; }
+  .btn { display:inline-block; padding:12px 22px; border-radius:10px; font-weight:600; text-decoration:none; }
+  .btn.primary { background:var(--accent); color:#fff; }
+  .btn.ghost { border:1px solid var(--border); color:var(--fg); }
+  section { padding:34px 0; border-top:1px solid var(--border); }
+  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:0 0 16px; }
+  ul { padding-left:0; list-style:none; margin:0; }
+  li { display:flex; gap:12px; margin:12px 0; align-items:flex-start; }
+  li .e { font-size:20px; line-height:1.4; }
+  .steps { counter-reset:s; }
+  .steps li { counter-increment:s; }
+  .steps li::before { content:counter(s); flex:0 0 26px; height:26px; border-radius:50%; background:var(--accent); color:#fff; font-size:14px; font-weight:700; display:grid; place-items:center; }
+  .platforms { display:flex; gap:10px; flex-wrap:wrap; }
+  .chip { border:1px solid var(--border); background:var(--card); border-radius:999px; padding:7px 14px; font-size:14px; }
+  code { background:var(--card); border:1px solid var(--border); padding:2px 7px; border-radius:6px; font-size:14px; }
+  a { color:var(--accent); }
+  footer { text-align:center; color:var(--muted); font-size:13px; padding:34px 0 60px; border-top:1px solid var(--border); }
+  footer .note { max-width:52ch; margin:10px auto 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="data:image/png;base64,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" alt="Article → Kindle logo" />
+    <h1>Article → Kindle</h1>
+    <p class="tag">Send the web article you're reading to your Kindle, as a clean EPUB.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/Ashernor/article-to-kindle">Get it on GitHub</a>
+      <a class="btn ghost" href="#how">How it works</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Why</h2>
+    <ul>
+      <li><span class="e">📖</span><div><strong>EPUB, not PDF.</strong> Kindles reflow EPUB the way e-ink is meant to be read — PDFs don't.</div></li>
+      <li><span class="e">🧹</span><div><strong>Clean reading.</strong> Strips nav, ads and clutter with Mozilla Readability, keeps the text and images.</div></li>
+      <li><span class="e">🔒</span><div><strong>Private by design.</strong> The article is converted on your device. Optional email delivery goes through a relay <em>you</em> host — nothing goes to us.</div></li>
+      <li><span class="e">⚖️</span><div><strong>Free &amp; open-source (MIT).</strong> Build it yourself, or support development with an optional tip.</div></li>
+    </ul>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <ul class="steps">
+      <li>Open an article and click the toolbar icon (or right-click → Send to Kindle).</li>
+      <li>The article is extracted and turned into a clean EPUB, right in your browser.</li>
+      <li>Download the <code>.epub</code>, or one-click email it to your <code>@kindle.com</code> address via your own relay.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Works on</h2>
+    <div class="platforms">
+      <span class="chip">Chrome</span><span class="chip">Edge</span><span class="chip">Brave</span>
+      <span class="chip">Safari · macOS</span><span class="chip">Safari · iOS</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Get involved</h2>
+    <ul>
+      <li><span class="e">📦</span><div><a href="https://github.com/Ashernor/article-to-kindle">Source code &amp; install guide</a></div></li>
+      <li><span class="e">💛</span><div><a href="https://github.com/sponsors/Ashernor">GitHub Sponsors</a> · <a href="https://ko-fi.com/ashernor">Ko-fi</a></div></li>
+      <li><span class="e">🔐</span><div><a href="/privacy.html">Privacy policy</a></div></li>
+    </ul>
+  </section>
+
+  <footer>
+    Free and open-source · MIT · © 2026
+    <div class="note">This domain also hosts the maintainer's personal “send to Kindle” email relay at <code>/.netlify/functions/send</code>.</div>
+  </footer>
+</div>
+</body>
+</html>
