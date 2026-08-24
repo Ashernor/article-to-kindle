@@ -3,7 +3,7 @@
     "message": "Article → Kindle"
   },
   "extDescription": {
-    "message": "Send the current article to your Kindle as a clean EPUB. Everything runs locally; email delivery is optional."
+    "message": "Send the current web article to your Kindle as a clean EPUB. Email delivery is optional."
   },
   "ctxSend": {
     "message": "Send to Kindle"

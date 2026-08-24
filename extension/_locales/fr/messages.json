@@ -3,7 +3,7 @@
     "message": "Article → Kindle"
   },
   "extDescription": {
-    "message": "Envoie l'article courant vers ton Kindle, converti en EPUB propre. Tout se passe en local ; l'email est optionnel."
+    "message": "Envoie l'article courant vers ton Kindle en EPUB propre. L'email est optionnel."
   },
   "ctxSend": {
     "message": "Envoyer vers le Kindle"
