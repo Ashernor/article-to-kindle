@@ -79,8 +79,6 @@ async function deliverRelay(blob, filename, settings) {
 
 async function clip(tabId) {
   const settings = await getSettings();
-  // On browsers without the downloads API (Safari), fall back to relay if configured.
-  const mode = settings.mode === "download" && !HAS_DOWNLOADS && settings.relayUrl ? "relay" : settings.mode;
 
   const article = await extractFromTab(tabId);
   if (!article || article.error) throw new Error(article ? article.error : t("errExtractEmpty"));
@@ -89,7 +87,7 @@ async function clip(tabId) {
   const blob = await buildEpub({ ...article, images });
   const filename = slugifyFilename(article.title);
 
-  if (mode === "relay") return deliverRelay(blob, filename, settings);
+  if (settings.mode === "relay") return deliverRelay(blob, filename, settings);
   return deliverDownload(blob, filename);
 }
 

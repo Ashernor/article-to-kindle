@@ -6,7 +6,9 @@
 @media (prefers-color-scheme: dark) {
   :root { --bg: #1c1c1e; --fg: #f2f2f7; --muted: #9ca3af; --border: #48484a; --btn2-bg: #2c2c2e; --btn2-fg: #f2f2f7; }
 }
-body { font: 14px/1.4 system-ui, -apple-system, sans-serif; width: 320px; margin: 0; padding: 14px; background: var(--bg); color: var(--fg); }
+html { min-width: 320px; }
+* { box-sizing: border-box; }
+body { font: 14px/1.4 system-ui, -apple-system, sans-serif; width: 100%; margin: 0; padding: 14px; background: var(--bg); color: var(--fg); }
 h1 { font-size: 15px; margin: 0 0 10px; }
 button { width: 100%; padding: 10px; border: 0; border-radius: 8px; cursor: pointer; font-size: 14px; }
 button.primary { background: var(--accent); color: #fff; font-weight: 600; }
@@ -19,7 +21,8 @@ details { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 8p
 summary { cursor: pointer; font-weight: 600; }
 label { display: block; margin: 10px 0 4px; font-size: 12px; color: var(--muted); }
 .radios label { display: block; margin: 4px 0; color: inherit; font-size: 14px; }
-input[type=email], input[type=url], input[type=text] { width: 100%; box-sizing: border-box; padding: 7px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: inherit; }
+.radios input:disabled + span, .radios label:has(input:disabled) { opacity: .55; }
+input[type=email], input[type=url], input[type=text] { width: 100%; padding: 7px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: inherit; }
 .hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
 .relay-only.hidden { display: none; }
 .about-link { display: block; text-align: center; margin-top: 12px; font-size: 12px; color: var(--accent); text-decoration: none; }

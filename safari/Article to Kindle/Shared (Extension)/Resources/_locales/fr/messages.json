@@ -125,5 +125,8 @@
   },
   "aboutLicense": {
     "message": "Sous licence MIT"
+  },
+  "downloadUnavailable": {
+    "message": "indisponible sur Safari"
   }
 }

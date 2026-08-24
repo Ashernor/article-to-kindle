@@ -2582,13 +2582,12 @@ ${imageItems}
   }
   async function clip(tabId) {
     const settings = await getSettings();
-    const mode = settings.mode === "download" && !HAS_DOWNLOADS && settings.relayUrl ? "relay" : settings.mode;
     const article = await extractFromTab(tabId);
     if (!article || article.error) throw new Error(article ? article.error : t("errExtractEmpty"));
     const images = await fetchImages(article.imageRefs || []);
     const blob = await buildEpub({ ...article, images });
     const filename = slugifyFilename(article.title);
-    if (mode === "relay") return deliverRelay(blob, filename, settings);
+    if (settings.mode === "relay") return deliverRelay(blob, filename, settings);
     return deliverDownload(blob, filename);
   }
   chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
