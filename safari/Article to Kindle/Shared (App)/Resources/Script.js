@@ -2,10 +2,14 @@ function show(platform, enabled, useSettingsInsteadOfPreferences) {
     document.body.classList.add(`platform-${platform}`);
 
     if (useSettingsInsteadOfPreferences) {
-        document.getElementsByClassName('platform-mac state-on')[0].innerText = "Article to Kindle’s extension is currently on. You can turn it off in the Extensions section of Safari Settings.";
-        document.getElementsByClassName('platform-mac state-off')[0].innerText = "Article to Kindle’s extension is currently off. You can turn it on in the Extensions section of Safari Settings.";
-        document.getElementsByClassName('platform-mac state-unknown')[0].innerText = "You can turn on Article to Kindle’s extension in the Extensions section of Safari Settings.";
-        document.getElementsByClassName('platform-mac open-preferences')[0].innerText = "Quit and Open Safari Settings…";
+        var on = document.querySelector('.platform-mac.state-on');
+        var off = document.querySelector('.platform-mac.state-off');
+        var unknown = document.querySelector('.platform-mac.state-unknown');
+        var btn = document.querySelector('.platform-mac.open-preferences');
+        if (on) on.innerText = "Article to Kindle’s extension is currently on. You can turn it off in the Extensions section of Safari Settings.";
+        if (off) off.innerText = "Article to Kindle’s extension is currently off. You can turn it on in the Extensions section of Safari Settings.";
+        if (unknown) unknown.innerText = "You can turn on Article to Kindle’s extension in the Extensions section of Safari Settings.";
+        if (btn) btn.innerText = "Quit and Open Safari Settings…";
     }
 
     if (typeof enabled === "boolean") {
@@ -17,8 +21,14 @@ function show(platform, enabled, useSettingsInsteadOfPreferences) {
     }
 }
 
+function setVersion(v) {
+    var el = document.getElementById('ver');
+    if (el && v) el.textContent = v;
+}
+
 function openPreferences() {
     webkit.messageHandlers.controller.postMessage("open-preferences");
 }
 
-document.querySelector("button.open-preferences").addEventListener("click", openPreferences);
+var prefBtn = document.querySelector("button.open-preferences");
+if (prefBtn) prefBtn.addEventListener("click", openPreferences);

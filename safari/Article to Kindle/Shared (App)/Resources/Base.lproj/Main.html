@@ -3,18 +3,52 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="stylesheet" href="../Style.css">
     <script src="../Script.js" defer></script>
 </head>
 <body>
-    <img src="../Icon.png" width="128" height="128" alt="Article to Kindle Icon">
-    <p class="platform-ios">You can turn on Article to Kindle’s Safari extension in Settings.</p>
-    <p class="platform-mac state-unknown">You can turn on Article to Kindle’s extension in Safari Extensions preferences.</p>
-    <p class="platform-mac state-on">Article to Kindle’s extension is currently on. You can turn it off in Safari Extensions preferences.</p>
-    <p class="platform-mac state-off">Article to Kindle’s extension is currently off. You can turn it on in Safari Extensions preferences.</p>
-    <button class="platform-mac open-preferences">Quit and Open Safari Extensions Preferences…</button>
+  <main class="wrap">
+    <header>
+      <img src="../Icon.png" width="72" height="72" alt="Article to Kindle">
+      <h1>Article → Kindle</h1>
+      <p class="tag">Send the web article you're reading to your Kindle, as a clean EPUB.</p>
+      <p class="ver">v<span id="ver">1.0</span> · open-source (MIT)</p>
+    </header>
+
+    <section>
+      <h2>Step 1 · Enable the extension</h2>
+      <p class="platform-ios">Open <b>Settings → Apps → Safari → Extensions</b>, turn on <b>Article → Kindle</b>, then allow it on the sites you read.</p>
+      <p class="platform-mac state-unknown">You can turn on Article to Kindle’s extension in the Extensions section of Safari Settings.</p>
+      <p class="platform-mac state-on">Article to Kindle’s extension is currently on. You can turn it off in the Extensions section of Safari Settings.</p>
+      <p class="platform-mac state-off">Article to Kindle’s extension is currently off. You can turn it on in the Extensions section of Safari Settings.</p>
+      <button class="platform-mac open-preferences">Quit and Open Safari Settings…</button>
+    </section>
+
+    <section>
+      <h2>Step 2 · Use it</h2>
+      <ol>
+        <li>Open any article in Safari.</li>
+        <li>Tap the <b>Article → Kindle</b> button in the toolbar (or via the page menu).</li>
+        <li>Tap <b>Send to Kindle</b> — download the EPUB, or email it to your Kindle.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Delivery settings</h2>
+      <p>Pick <b>Download</b> or <b>Email</b>, and set your Kindle address and relay, <b>inside the extension</b>: open it from Safari and tap <b>Settings</b>. Email delivery needs a one-time, free setup:</p>
+      <p><a href="https://article-to-kindle.netlify.app/setup.html">Open the setup guide →</a></p>
+    </section>
+
+    <section class="about">
+      <h2>About</h2>
+      <a class="row" href="https://github.com/Ashernor/article-to-kindle">Source code (GitHub)</a>
+      <a class="row" href="https://github.com/sponsors/Ashernor">GitHub Sponsors</a>
+      <a class="row" href="https://ko-fi.com/ashernor">Ko-fi (leave a tip)</a>
+      <a class="row" href="https://article-to-kindle.netlify.app/privacy.html">Privacy policy</a>
+    </section>
+
+    <footer>Private by design — the article is converted on your device and nothing is sent to the developer.</footer>
+  </main>
 </body>
 </html>

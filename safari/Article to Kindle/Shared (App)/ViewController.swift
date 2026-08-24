@@ -2,8 +2,6 @@
 //  ViewController.swift
 //  Shared (App)
 //
-//  Created by Thomas ROBIN on 24/08/2026.
-//
 
 import WebKit
 
@@ -28,7 +26,7 @@ class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMess
         self.webView.navigationDelegate = self
 
 #if os(iOS)
-        self.webView.scrollView.isScrollEnabled = false
+        self.webView.scrollView.isScrollEnabled = true
 #endif
 
         self.webView.configuration.userContentController.add(self, name: "controller")
@@ -36,7 +34,27 @@ class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMess
         self.webView.loadFileURL(Bundle.main.url(forResource: "Main", withExtension: "html")!, allowingReadAccessTo: Bundle.main.resourceURL!)
     }
 
+    // Open external http(s) links in the system browser instead of inside the app.
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if navigationAction.navigationType == .linkActivated,
+           let url = navigationAction.request.url,
+           let scheme = url.scheme?.lowercased(),
+           scheme == "http" || scheme == "https" {
+#if os(iOS)
+            UIApplication.shared.open(url)
+#elseif os(macOS)
+            NSWorkspace.shared.open(url)
+#endif
+            decisionHandler(.cancel)
+            return
+        }
+        decisionHandler(.allow)
+    }
+
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        let version = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? ""
+        webView.evaluateJavaScript("if (window.setVersion) { setVersion('\(version)') }")
+
 #if os(iOS)
         webView.evaluateJavaScript("show('ios')")
 #elseif os(macOS)
@@ -44,7 +62,6 @@ class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMess
 
         SFSafariExtensionManager.getStateOfSafariExtension(withIdentifier: extensionBundleIdentifier) { (state, error) in
             guard let state = state, error == nil else {
-                // Insert code to inform the user that something went wrong.
                 return
             }
 
@@ -67,7 +84,6 @@ class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMess
 
         SFSafariApplication.showPreferencesForExtension(withIdentifier: extensionBundleIdentifier) { error in
             guard error == nil else {
-                // Insert code to inform the user that something went wrong.
                 return
             }
 

@@ -1,61 +1,38 @@
-* {
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-    cursor: default;
-}
+* { -webkit-user-select: none; -webkit-user-drag: none; cursor: default; }
+a, button, .row { cursor: pointer; -webkit-user-select: none; }
 
 :root {
-    color-scheme: light dark;
-
-    --spacing: 20px;
+  color-scheme: light dark;
+  --bg:#ffffff; --fg:#1a1a1a; --muted:#6b7280; --border:#e2e2e7; --card:#f6f6f8; --accent:#d97706;
 }
-
-html {
-    height: 100%;
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141416; --fg:#f2f2f7; --muted:#9ca3af; --border:#2c2c2e; --card:#1c1c1e; }
 }
+html, body { margin: 0; }
+body { font: 16px/1.5 -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--fg); -webkit-text-size-adjust: 100%; }
+.wrap { max-width: 520px; margin: 0 auto; padding: 28px 22px 44px; }
+header { text-align: center; margin-bottom: 8px; }
+header img { width: 72px; height: 72px; }
+h1 { font-size: 24px; margin: 12px 0 4px; }
+.tag { color: var(--muted); margin: 0 auto; max-width: 32ch; }
+.ver { color: var(--muted); font-size: 13px; margin-top: 6px; }
+section { border-top: 1px solid var(--border); padding: 20px 0; }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 10px; }
+p { margin: 8px 0; }
+ol { margin: 8px 0; padding-left: 22px; } li { margin: 6px 0; }
+b { font-weight: 600; }
+a { color: var(--accent); text-decoration: none; }
+button { font-size: 16px; font-weight: 600; padding: 11px 16px; border: 0; border-radius: 10px; background: var(--accent); color: #fff; margin-top: 8px; -webkit-appearance: none; }
+button:active { opacity: .7; }
+.about .row { display: block; padding: 12px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin: 8px 0; color: var(--fg); }
+.about .row:active { opacity: .6; }
+.about .row::after { content: "›"; float: right; color: var(--muted); }
+footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 22px; }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    gap: var(--spacing);
-    margin: 0 calc(var(--spacing) * 2);
-    height: 100%;
-
-    font: -apple-system-short-body;
-    text-align: center;
-}
-
-body:not(.platform-mac, .platform-ios) :is(.platform-mac, .platform-ios) {
-    display: none;
-}
-
-body.platform-ios .platform-mac {
-    display: none;
-}
-
-body.platform-mac .platform-ios {
-    display: none;
-}
-
-body.platform-ios .platform-mac {
-    display: none;
-}
-
-body:not(.state-on, .state-off) :is(.state-on, .state-off) {
-    display: none;
-}
-
-body.state-on :is(.state-off, .state-unknown) {
-    display: none;
-}
-
-body.state-off :is(.state-on, .state-unknown) {
-    display: none;
-}
-
-button {
-    font-size: 1em;
-}
+/* platform / state visibility — driven by the native show() hook */
+body:not(.platform-mac):not(.platform-ios) :is(.platform-mac, .platform-ios) { display: none; }
+body.platform-ios .platform-mac { display: none; }
+body.platform-mac .platform-ios { display: none; }
+body:not(.state-on):not(.state-off) :is(.state-on, .state-off) { display: none; }
+body.state-on :is(.state-off, .state-unknown) { display: none; }
+body.state-off :is(.state-on, .state-unknown) { display: none; }
