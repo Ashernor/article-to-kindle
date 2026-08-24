@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Set up email delivery — Article → Kindle</title>
+<meta name="description" content="How to deploy your own Netlify relay, set the environment variables, and approve your sender address on Amazon so the extension can email articles to your Kindle." />
+<style>
+  :root { color-scheme: light dark;
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#6b7280; --border:#e5e5ea; --card:#fafafa; --accent:#d97706; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#f2f2f7; --muted:#9ca3af; --border:#2c2c2e; --card:#1c1c1e; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font:17px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--fg); }
+  .wrap { max-width:760px; margin:0 auto; padding:0 22px 80px; }
+  header { text-align:center; padding:52px 0 24px; }
+  header img { width:64px; height:64px; }
+  h1 { font-size:30px; margin:14px 0 6px; letter-spacing:-.4px; }
+  .lead { color:var(--muted); max-width:52ch; margin:0 auto; }
+  a { color:var(--accent); }
+  .back { display:inline-block; margin-top:14px; font-size:15px; }
+  section { padding:26px 0; border-top:1px solid var(--border); }
+  h2 { font-size:20px; margin:0 0 6px; }
+  .step { color:var(--accent); font-weight:700; font-size:14px; letter-spacing:.04em; text-transform:uppercase; }
+  .note { background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:12px 16px; margin:14px 0; font-size:15px; }
+  pre { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 16px; overflow:auto; font-size:14px; }
+  code { background:var(--card); border:1px solid var(--border); padding:2px 6px; border-radius:6px; font-size:14px; }
+  pre code { border:0; padding:0; background:none; }
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:15px; }
+  th,td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  ol { padding-left:22px; } li { margin:8px 0; }
+  .btn { display:inline-block; padding:11px 20px; border-radius:10px; background:var(--accent); color:#fff; font-weight:600; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAAAlgAAAJYAJvGvrMAAAAHdElNRQfqCBgIBh8Ll10+AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI2LTA4LTI0VDA4OjA2OjI3KzAwOjAwp15nbgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNi0wOC0yNFQwODowNjoyNyswMDowMNYD39IAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjYtMDgtMjRUMDg6MDY6MjcrMDA6MDCBFv4NAAAGAElEQVR42u2dzY8URRiHn5lld5n1sMjBsH5dZFmjZzSKhouJ2Rsa/wkDNxI5Gr0R5URI/C+UG4kxGiOSGG5wcBFCICFkPchygP2e8fB2scMsuzuz09Vd9c7vSeYyO9td3e9T1VVvVXeDEEIIIYQQQgghhBBCCCGEEEIIIYQQwg+NugswKAvnJuouwq7MnV+ruwgDkY0AOwS+WRxDXcfRKT7t3j/kIkIWAvQEvwkcBFrAODBWc/E2gXVgGVihS4YcJEhegJ7gTwLTmACplb2DCfAYWA1fpi5BaifxOXqC3wIOAwfqLtcebACPgKfhi5QlaNZdgD6ZJI/gU5Tx5aLMyZOsAF21v4k1+zkEP3CgKHOz51iSI1kBujhYfHIji3LnIECLxPsqO9Aoyp40qQvQxIZ6uTJB4uc46cJhtajucf4wNEn8HCddOPJs+rMidQFEZCTAiJPT2LofwuRMTOqcfCodTwK0gSksCxerZWuzleZ10Xp6EaANvAucBd4mXg3tALeAC8ANHEjgQYAOVvPPAp9UsL/XscB/ibUEWV8OsjcYE2AaOFbhPmeBQ8Tvb0THgwANbA7+doX7vA0skXntBx+XgAbWFF/AhD5G3D7AP8D3wBMcVCAPAoAF4gZ2XT5M3FHAfzgJPvgRACwgT7HgxKSBk+CDLwHAWZKmCtyYLPaHBBhxvF0CqhqXu7nMeBEgBH4KW4UTS4QGsMbWku/sRfAiAMA7wAniL8RcAa4BN+s+4DLwIECYCzgBvMoL7tMrmWaxr7vYkDPrVkCdwBHHQwsQUsHXgA+xpdgx+wArwJ84mAkEHwIEbmLNcuzbcEInsIMESIYQiCfETwWH/WUffPAjQMBFUKrEmwBKBA2IFwGUCNonXgQAJYL2hQcBlAga8mDECOOhBVAiaAg8CBBQImgfeBFAiaB94kWAgIugVIk3AYa99o+cQF4EGDYR5C7B0y9eBIDhE0GuEjz94kGAshJBrhI8gxy0GGE8tABlJILcJXj6xYMAgWETQa4SPP3iRYCyEkFuEjz94kWAwEgFrwzUCRxxJMCI4+0SsBc7vuWroO63kFXOqAgQgj4OzABvAW9iT/oCe8jUfezhTw+xt4AFGVwzCgJsYunh94FTwHvAEbYPF9eAReAv4DKWV1gh78fV74lnAUKtPwqcBuaBl3b5/QTwRvGZB64Al7Ang7ptDbx2AsO1/mPgB+ALdg9+L1PA58X/nqSah1DXglcB2sBHwHfA3BDbmS22cZL4q41rwaMAm1iz/zXwWgnbmym2NVds2xXeBOhgHb7TDFfzezkKnCHuiuNa8CZAG+vtz0fY9qfABzhrBTwJ0MHG+acYrMPXLy3gM+yVsG5aAW8CzGDj/Fgcx1YdSYAEaWMZviMR9/EKNjJwMyLwJABYejfmnUHjxT7c4E2AQxXtw01W0JsAYkC8CfC4on2oE5go97FZvVisA/fqPsgy8SRAE5vPX4y4j3+Lfbg5b24OBOuYPcTm82NxHXiAOoFJ0sCa6Mts3eRZJsvAT8AqEiBZmthKnisRtv0zcBVnK4S8CRBu8bqEvd+vLO4AF7FWwE3tB38CgNXQW8A3WJ9gWBaBb4G/cVb7wacA4bh+B75iuFfK3im28StOz5XXRaGhmf4NawXOYPP5rT7/fxm75l/Ear7bRaFeBQAL2BiwgNXiH7H5/OPYrN54z+/XsXH+day3fxUTwV2z303qApSRch3Dhm6/AH9g8/mzbL8x5B52uXhQ/H4M58GHPATYLKGcjWIbG1ig73Z9H/YDW019WeelTeJrB1IXoI01zZMlbS/c91dVh26NxAXIoWe7TJ6zb52i7EmTgwArxSc3VnMod7ICzJ1/NqvbxjppG3WXaQA2gKWi7N3HkhzJCtDDKvCIPCTYKMq6WndB+iH55MbCuefWeE4C09jdP6mVvYMFfYmu4Kdc+yG9k/hCeiRoYgK0sBXAdbdibay3v4xd85/1+lMPPmQiAGyTINAkDQG2DfVyCD5kJEBgBxGSIZfACyGEEEIIIYQQQgghhBBCCCGEEEIIITzyPyd2MVBpjOQEAAAAAElFTkSuQmCC" alt="" />
+    <h1>Set up email delivery</h1>
+    <p class="lead">Download mode needs nothing. <strong>Email mode</strong> sends the EPUB straight to your Kindle — it takes ~10 minutes to set up, once.</p>
+    <a class="back" href="/">← Back to home</a>
+  </header>
+
+  <div class="note"><strong>Why a relay?</strong> Browsers can't send email (no SMTP). The relay is a stateless function that forwards the EPUB through <strong>your</strong> mailbox to <strong>your</strong> <code>@kindle.com</code> address. It stores nothing, and nothing ever reaches the developer.</div>
+
+  <section>
+    <div class="step">Step 1</div>
+    <h2>Deploy your own relay on Netlify (free)</h2>
+    <p><a class="btn" href="https://app.netlify.com/start/deploy?repository=https://github.com/Ashernor/article-to-kindle">Deploy to Netlify</a></p>
+    <p>The button deploys the project (it reads <code>netlify.toml</code>, base directory <code>server</code>). Or manually: sign in at <a href="https://app.netlify.com">app.netlify.com</a>, then drag the <code>server/</code> folder onto the <strong>Deploys</strong> area, or connect the Git repo with <strong>Base directory = <code>server</code></strong>.</p>
+  </section>
+
+  <section>
+    <div class="step">Step 2</div>
+    <h2>Get an email app password</h2>
+    <p>You need SMTP credentials for your mailbox — always an <strong>app password</strong>, never your normal login password.</p>
+    <table>
+      <tr><th>Provider</th><th>SMTP host / port</th><th>App password</th></tr>
+      <tr><td>Gmail</td><td><code>smtp.gmail.com</code> / <code>465</code></td><td><a href="https://myaccount.google.com/apppasswords">myaccount.google.com/apppasswords</a> (2FA required)</td></tr>
+      <tr><td>Fastmail</td><td><code>smtp.fastmail.com</code> / <code>465</code></td><td>Settings → Privacy &amp; Security → <strong>App Passwords</strong> → new, access <strong>IMAP/SMTP</strong></td></tr>
+      <tr><td>iCloud+</td><td><code>smtp.mail.me.com</code> / <code>587</code></td><td><a href="https://appleid.apple.com">appleid.apple.com</a> → App-Specific Passwords</td></tr>
+      <tr><td>Other</td><td>your provider's SMTP</td><td>your provider's app-password page</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="step">Step 3</div>
+    <h2>Set the environment variables on Netlify</h2>
+    <p>Site configuration → <strong>Environment variables</strong> → add these (scope: <strong>Functions</strong>):</p>
+    <pre><code>SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=you@example.com
+SMTP_PASS=your_app_password
+SMTP_FROM=you@example.com
+RELAY_TOKEN=a-long-random-string</code></pre>
+    <p><code>RELAY_TOKEN</code> is optional but <strong>recommended</strong> — it stops anyone else using your public endpoint. Generate one with:</p>
+    <pre><code>node -e "console.log(require('crypto').randomBytes(24).toString('base64url'))"</code></pre>
+    <div class="note">Then <strong>Deploys → Trigger deploy</strong> — env-var changes only apply on a new deploy. To check it's live, open <code>https://&lt;your-site&gt;.netlify.app/.netlify/functions/send</code> in a browser: it should say <strong>“Method not allowed”</strong> (not a 404).</div>
+  </section>
+
+  <section>
+    <div class="step">Step 4</div>
+    <h2>Approve your sender on Amazon <span style="color:var(--muted);font-size:15px;font-weight:400;">(the step people forget)</span></h2>
+    <p>Amazon <strong>silently drops</strong> documents from addresses you haven't approved.</p>
+    <ol>
+      <li>Open <strong>Manage Your Content and Devices → Preferences → Personal Document Settings</strong> (use your country's Amazon):
+        <a href="https://www.amazon.com/hz/mycd/digital-console/alldevices">.com</a> ·
+        <a href="https://www.amazon.co.uk/hz/mycd/digital-console/alldevices">.co.uk</a> ·
+        <a href="https://www.amazon.fr/hz/mycd/digital-console/alldevices">.fr</a> ·
+        <a href="https://www.amazon.de/hz/mycd/digital-console/alldevices">.de</a> ·
+        <a href="https://www.amazon.ca/hz/mycd/digital-console/alldevices">.ca</a>
+      </li>
+      <li>Under <strong>Approved Personal Document E-mail List</strong> → <strong>Add a new approved e-mail address</strong> → enter your <code>SMTP_FROM</code> address → <strong>Add</strong>.</li>
+      <li>On the same page, under <strong>Send-to-Kindle E-Mail Settings</strong>, copy your device's <strong><code>…@kindle.com</code></strong> address.</li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="step">Step 5</div>
+    <h2>Configure the extension</h2>
+    <p>Extension → <strong>Settings</strong> → <strong>Send by email</strong>, then fill:</p>
+    <ul>
+      <li><strong>Kindle address</strong> — the <code>…@kindle.com</code> from step 4.3</li>
+      <li><strong>Relay URL</strong> — <code>https://&lt;your-site&gt;.netlify.app/.netlify/functions/send</code></li>
+      <li><strong>Relay token</strong> — the <code>RELAY_TOKEN</code> from step 3 (if you set one)</li>
+    </ul>
+    <p>Save, open an article, hit <strong>Send to Kindle</strong> — it arrives in a few minutes. 🎉</p>
+  </section>
+
+  <section>
+    <h2>Troubleshooting</h2>
+    <table>
+      <tr><th>Symptom</th><th>Cause / fix</th></tr>
+      <tr><td><code>Relay: 404</code></td><td>Wrong relay URL — it must end with <code>/.netlify/functions/send</code></td></tr>
+      <tr><td><code>Relay: 401</code></td><td>Token mismatch — the extension's token must equal <code>RELAY_TOKEN</code></td></tr>
+      <tr><td><code>Invalid login</code> (500)</td><td>Wrong <code>SMTP_USER</code>/<code>SMTP_PASS</code> — use an <strong>app password</strong></td></tr>
+      <tr><td><code>ECONNREFUSED 127.0.0.1</code></td><td><code>SMTP_HOST</code> not set, or you didn't redeploy after adding env vars</td></tr>
+      <tr><td>Sent OK but nothing on the Kindle</td><td>Sender not on Amazon's approved list, or wrong <code>@kindle.com</code> address</td></tr>
+    </table>
+  </section>
+</div>
+</body>
+</html>

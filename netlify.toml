@@ -1,0 +1,9 @@
+# Root config so a one-click "Deploy to Netlify" / git-connected deploy works
+# out of the box. The actual site lives in server/.
+[build]
+  base = "server"
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
