@@ -1,17 +1,37 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extName__",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
-  "permissions": ["scripting", "downloads", "storage", "activeTab", "contextMenus", "tabs"],
-  "host_permissions": ["http://*/*", "https://*/*"],
-  "background": { "service_worker": "dist/background.js" },
-  "icons": { "16": "icons/icon-16.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" },
+  "permissions": [
+    "scripting",
+    "downloads",
+    "storage",
+    "activeTab",
+    "contextMenus",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
   "options_page": "welcome/welcome.html",
   "action": {
     "default_title": "__MSG_ctxSend__",
     "default_popup": "popup/popup.html",
-    "default_icon": { "16": "icons/icon-16.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" }
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
   }
 }

@@ -5,22 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Article → Kindle</title>
   <style>
-    :root { color-scheme: light dark; }
-    body { font: 15px/1.5 system-ui, -apple-system, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; }
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff; --fg: #1a1a1a; --muted: #6b7280; --border: #d0d0d5;
+      --card: #ffffff; --accent: #d97706;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #1c1c1e; --fg: #f2f2f7; --muted: #9ca3af; --border: #3a3a3c; --card: #2c2c2e; }
+    }
+    body { font: 15px/1.5 system-ui, -apple-system, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; background: var(--bg); color: var(--fg); }
     h1 { font-size: 22px; display: flex; align-items: center; gap: 10px; }
     h1 img { width: 32px; height: 32px; }
     h2 { font-size: 16px; margin-top: 28px; }
     ol { padding-left: 20px; } li { margin: 6px 0; }
-    .card { border: 1px solid #8884; border-radius: 10px; padding: 16px 18px; margin-top: 18px; }
-    label { display: block; margin: 12px 0 4px; font-size: 13px; color: #6b7280; }
-    input[type=email], input[type=url], input[type=text] { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #9ca3af; border-radius: 6px; background: transparent; color: inherit; }
+    .card { border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-top: 18px; background: var(--card); }
+    label { display: block; margin: 12px 0 4px; font-size: 13px; color: var(--muted); }
+    input[type=email], input[type=url], input[type=text] { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: inherit; }
     .radios label { display: block; margin: 6px 0; color: inherit; font-size: 15px; }
     .relay-only.hidden { display: none; }
-    button { margin-top: 14px; padding: 10px 16px; border: 0; border-radius: 8px; background: #d97706; color: #fff; font-weight: 600; cursor: pointer; }
+    button { margin-top: 14px; padding: 10px 16px; border: 0; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 600; cursor: pointer; }
     .status { margin-top: 10px; font-size: 14px; min-height: 1.2em; }
     .status.ok { color: #059669; } .status.err { color: #dc2626; }
-    .hint { font-size: 12px; color: #6b7280; }
-    a { color: #d97706; }
+    .hint { font-size: 12px; color: var(--muted); }
+    a { color: var(--accent); }
+    .about-link { display: inline-block; margin-top: 20px; font-size: 14px; }
   </style>
 </head>
 <body>
@@ -57,6 +65,7 @@
   </div>
 
   <p class="hint" style="margin-top:20px" data-i18n="welcomeFooter">Your settings are saved and reused for every send.</p>
+  <a class="about-link" href="../about/about.html" data-i18n="aboutLink">About</a>
 
   <script src="welcome.js"></script>
 </body>

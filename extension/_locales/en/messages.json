@@ -1,33 +1,129 @@
 {
-  "extName": { "message": "Article → Kindle" },
-  "extDescription": { "message": "Send the current article to your Kindle as a clean EPUB. Everything runs locally; email delivery is optional." },
-  "ctxSend": { "message": "Send to Kindle" },
-  "statusWorking": { "message": "Extracting and converting…" },
-  "statusDownloaded": { "message": "EPUB downloaded: $file$", "placeholders": { "file": { "content": "$1" } } },
-  "statusSent": { "message": "Sent to $addr$", "placeholders": { "addr": { "content": "$1" } } },
-  "errNoRelayUrl": { "message": "No relay URL configured." },
-  "errNoKindle": { "message": "No Kindle address configured." },
-  "errExtractEmpty": { "message": "Could not extract a readable article on this page." },
-  "errNotWebPage": { "message": "Open a web page first (http/https)." },
-  "errDownloadUnsupported": { "message": "This browser (Safari) can't download directly. Switch to \"Send by email\" in the settings." },
-  "settingsSummary": { "message": "Settings" },
-  "modeLabel": { "message": "Delivery mode" },
-  "modeDownload": { "message": "Download the EPUB" },
-  "modeEmail": { "message": "Send by email (relay)" },
-  "kindleEmailLabel": { "message": "Kindle address (@kindle.com)" },
-  "relayUrlLabel": { "message": "Relay URL (Netlify)" },
-  "relayTokenLabel": { "message": "Relay token (optional)" },
-  "relayTokenPh": { "message": "if RELAY_TOKEN is set" },
-  "relayHint": { "message": "The sender configured on your relay must be on Amazon's \"Approved Personal Document E-mail List\"." },
-  "saveBtn": { "message": "Save" },
-  "savedOk": { "message": "Settings saved." },
-  "welcomeIntro": { "message": "Send the article you're reading to your Kindle as a clean EPUB. Everything runs locally in your browser; email delivery is optional." },
-  "welcomeHowto": { "message": "How to use it" },
-  "welcomeStep1": { "message": "Open an article (blog, news…)." },
-  "welcomeStep2": { "message": "Click the Article → Kindle toolbar icon, or right-click → \"Send to Kindle\"." },
-  "welcomeStep3": { "message": "In Download mode the .epub lands in your Downloads. In Email mode it is sent to your Kindle." },
-  "welcomeModeDownloadLong": { "message": "Download the EPUB (default, 100% local)" },
-  "welcomeModeEmailLong": { "message": "Send by email to the Kindle (relay)" },
-  "welcomeRelayHint": { "message": "The relay's sender must be on Amazon's \"Approved Personal Document E-mail List\", and your Kindle address is in Manage Your Content and Devices." },
-  "welcomeFooter": { "message": "Your settings are saved (synced by your browser) and reused for every send. Reopen them anytime via right-click on the icon → Options." }
+  "extName": {
+    "message": "Article → Kindle"
+  },
+  "extDescription": {
+    "message": "Send the current article to your Kindle as a clean EPUB. Everything runs locally; email delivery is optional."
+  },
+  "ctxSend": {
+    "message": "Send to Kindle"
+  },
+  "statusWorking": {
+    "message": "Extracting and converting…"
+  },
+  "statusDownloaded": {
+    "message": "EPUB downloaded: $file$",
+    "placeholders": {
+      "file": {
+        "content": "$1"
+      }
+    }
+  },
+  "statusSent": {
+    "message": "Sent to $addr$",
+    "placeholders": {
+      "addr": {
+        "content": "$1"
+      }
+    }
+  },
+  "errNoRelayUrl": {
+    "message": "No relay URL configured."
+  },
+  "errNoKindle": {
+    "message": "No Kindle address configured."
+  },
+  "errExtractEmpty": {
+    "message": "Could not extract a readable article on this page."
+  },
+  "errNotWebPage": {
+    "message": "Open a web page first (http/https)."
+  },
+  "errDownloadUnsupported": {
+    "message": "This browser (Safari) can't download directly. Switch to \"Send by email\" in the settings."
+  },
+  "settingsSummary": {
+    "message": "Settings"
+  },
+  "modeLabel": {
+    "message": "Delivery mode"
+  },
+  "modeDownload": {
+    "message": "Download the EPUB"
+  },
+  "modeEmail": {
+    "message": "Send by email (relay)"
+  },
+  "kindleEmailLabel": {
+    "message": "Kindle address (@kindle.com)"
+  },
+  "relayUrlLabel": {
+    "message": "Relay URL (Netlify)"
+  },
+  "relayTokenLabel": {
+    "message": "Relay token (optional)"
+  },
+  "relayTokenPh": {
+    "message": "if RELAY_TOKEN is set"
+  },
+  "relayHint": {
+    "message": "The sender configured on your relay must be on Amazon's \"Approved Personal Document E-mail List\"."
+  },
+  "saveBtn": {
+    "message": "Save"
+  },
+  "savedOk": {
+    "message": "Settings saved."
+  },
+  "welcomeIntro": {
+    "message": "Send the article you're reading to your Kindle as a clean EPUB. Everything runs locally in your browser; email delivery is optional."
+  },
+  "welcomeHowto": {
+    "message": "How to use it"
+  },
+  "welcomeStep1": {
+    "message": "Open an article (blog, news…)."
+  },
+  "welcomeStep2": {
+    "message": "Click the Article → Kindle toolbar icon, or right-click → \"Send to Kindle\"."
+  },
+  "welcomeStep3": {
+    "message": "In Download mode the .epub lands in your Downloads. In Email mode it is sent to your Kindle."
+  },
+  "welcomeModeDownloadLong": {
+    "message": "Download the EPUB (default, 100% local)"
+  },
+  "welcomeModeEmailLong": {
+    "message": "Send by email to the Kindle (relay)"
+  },
+  "welcomeRelayHint": {
+    "message": "The relay's sender must be on Amazon's \"Approved Personal Document E-mail List\", and your Kindle address is in Manage Your Content and Devices."
+  },
+  "welcomeFooter": {
+    "message": "Your settings are saved (synced by your browser) and reused for every send. Reopen them anytime via right-click on the icon → Options."
+  },
+  "aboutLink": {
+    "message": "About"
+  },
+  "aboutSupport": {
+    "message": "Support the project"
+  },
+  "aboutProject": {
+    "message": "Project"
+  },
+  "aboutSponsors": {
+    "message": "GitHub Sponsors"
+  },
+  "aboutKofi": {
+    "message": "Ko-fi (one-off tip)"
+  },
+  "aboutGithub": {
+    "message": "Source code (GitHub)"
+  },
+  "aboutPrivacy": {
+    "message": "Privacy policy"
+  },
+  "aboutLicense": {
+    "message": "Licensed under MIT"
+  }
 }
