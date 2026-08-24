@@ -1,6 +1,6 @@
 const DEFAULTS = { kindleEmail: "", mode: "download", relayUrl: "", relayToken: "" };
 const $ = (id) => document.getElementById(id);
-const t = (k, s) => chrome.i18n.getMessage(k, s) || k;
+const t = (k, s) => (typeof chrome !== "undefined" && chrome.i18n && chrome.i18n.getMessage(k, s)) || "";
 
 function applyI18n() {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
