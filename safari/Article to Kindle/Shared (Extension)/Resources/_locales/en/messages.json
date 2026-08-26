@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Article → Kindle"
+    "message": "Article to Kindle"
   },
   "extDescription": {
     "message": "Send the current web article to your Kindle as a clean EPUB. Email delivery is optional."
