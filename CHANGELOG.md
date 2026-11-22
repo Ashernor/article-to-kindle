@@ -7,9 +7,13 @@ All notable changes to **Article to Kindle**. Loosely follows
 > the extension has its own version (currently **0.2.1**), while the iOS/macOS
 > apps use their App Store marketing version (**1.0**, **1.0.1**, …).
 
-## [1.0.1] — Unreleased (iOS / macOS update)
+## [1.0.2] — Unreleased (iOS / macOS update)
 
 ### Fixed
+- **Image-heavy articles now send reliably.** Large diagrams and screenshots are
+  downscaled and re-encoded on-device before the EPUB is built, keeping the file
+  small enough to download and to email (e.g. a 6.5 MB article drops to ~1.5 MB).
+  Previously such articles could fail to deliver.
 - **The delivery mode you pick is now always respected.** Previously, choosing
   "Download" on Safari (where the browser download API isn't available) while a
   relay was configured could silently send the article by email instead. Your
@@ -30,7 +34,7 @@ All notable changes to **Article to Kindle**. Loosely follows
 ### Changed
 - **Renamed to "Article to Kindle"** (dropped the `→` from the name) so it's
   found when searching the stores. The `→` wordmark stays as the visual logo.
-- Extension internal version bumped to **0.2.1**.
+- Extension internal version bumped to **0.2.2**.
 
 ## [1.0] — Initial release
 

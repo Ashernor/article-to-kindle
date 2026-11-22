@@ -2516,6 +2516,9 @@ ${imageItems}
   var DEFAULTS = { kindleEmail: "", mode: "download", relayUrl: "", relayToken: "" };
   var HAS_DOWNLOADS = typeof chrome !== "undefined" && !!(chrome.downloads && chrome.downloads.download);
   var t = (k, s) => chrome.i18n.getMessage(k, s) || k;
+  var IMG_MAX_DIM = 1600;
+  var IMG_JPEG_QUALITY = 0.9;
+  var IMG_COMPRESS_MIN = 100 * 1024;
   async function getSettings() {
     const s = await chrome.storage.sync.get(DEFAULTS);
     return { ...DEFAULTS, ...s };
@@ -2528,6 +2531,34 @@ ${imageItems}
       fr.readAsDataURL(blob);
     });
   }
+  async function toImage(ref, blob, type) {
+    const data = new Uint8Array(await blob.arrayBuffer());
+    return { id: ref.id, filename: ref.filename, originalFilename: ref.filename, mediaType: type || "image/jpeg", data };
+  }
+  async function processImage(ref, blob, type) {
+    const canCompress = typeof OffscreenCanvas !== "undefined" && typeof createImageBitmap !== "undefined" && type !== "image/svg+xml" && type !== "image/gif" && blob.size > IMG_COMPRESS_MIN;
+    if (!canCompress) return toImage(ref, blob, type);
+    try {
+      const bitmap = await createImageBitmap(blob);
+      const scale = Math.min(1, IMG_MAX_DIM / Math.max(bitmap.width, bitmap.height));
+      const w = Math.max(1, Math.round(bitmap.width * scale));
+      const h = Math.max(1, Math.round(bitmap.height * scale));
+      const canvas = new OffscreenCanvas(w, h);
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, w, h);
+      ctx.drawImage(bitmap, 0, 0, w, h);
+      if (bitmap.close) bitmap.close();
+      const jpeg = await canvas.convertToBlob({ type: "image/jpeg", quality: IMG_JPEG_QUALITY });
+      if (jpeg.size && jpeg.size < blob.size) {
+        const filename = ref.filename.replace(/\.[a-z0-9]+$/i, "") + ".jpg";
+        const data = new Uint8Array(await jpeg.arrayBuffer());
+        return { id: ref.id, filename, originalFilename: ref.filename, mediaType: "image/jpeg", data };
+      }
+    } catch (_) {
+    }
+    return toImage(ref, blob, type);
+  }
   async function fetchImages(imageRefs) {
     const images = [];
     await Promise.all(
@@ -2537,14 +2568,10 @@ ${imageItems}
           if (!res.ok) return;
           const type = (res.headers.get("content-type") || "").split(";")[0].trim();
           if (type && !type.startsWith("image/")) return;
-          const buf = await res.arrayBuffer();
-          if (buf.byteLength === 0 || buf.byteLength > 8 * 1024 * 1024) return;
-          images.push({
-            id: ref.id,
-            filename: ref.filename,
-            mediaType: type || "image/jpeg",
-            data: new Uint8Array(buf)
-          });
+          const blob = await res.blob();
+          if (blob.size === 0 || blob.size > 20 * 1024 * 1024) return;
+          const img = await processImage(ref, blob, type);
+          if (img.data.byteLength > 0 && img.data.byteLength <= 10 * 1024 * 1024) images.push(img);
         } catch (_) {
         }
       })
@@ -2585,7 +2612,13 @@ ${imageItems}
     const article = await extractFromTab(tabId);
     if (!article || article.error) throw new Error(article ? article.error : t("errExtractEmpty"));
     const images = await fetchImages(article.imageRefs || []);
-    const blob = await buildEpub({ ...article, images });
+    let contentXhtml = article.contentXhtml;
+    for (const img of images) {
+      if (img.originalFilename && img.originalFilename !== img.filename) {
+        contentXhtml = contentXhtml.split(img.originalFilename).join(img.filename);
+      }
+    }
+    const blob = await buildEpub({ ...article, contentXhtml, images });
     const filename = slugifyFilename(article.title);
     if (settings.mode === "relay") return deliverRelay(blob, filename, settings);
     return deliverDownload(blob, filename);
