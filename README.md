@@ -160,14 +160,15 @@ service, you can support development:
 
 ## Roadmap
 
-- [x] Chrome / Edge / Brave extension
-- [x] Right-click context menu
-- [x] Onboarding page + persistent settings
-- [x] English / French localization
-- [x] Safari & iOS app (Web Extension, macOS + iOS) — `safari/`
-- [ ] App Store release
+- [x] Chrome / Edge / Brave extension (published)
+- [x] Safari Web Extension app — macOS + iOS (iOS live on the App Store)
+- [x] Right-click context menu, onboarding, English / French localization
+- [x] On-device image compression for image-heavy articles
+- [ ] **1.1** — iOS/macOS **Share Extension**: send to Kindle from the system
+  share sheet (works from any app, not just Safari)
+- [ ] **1.2** — In-app tip jar + optional **hosted-relay subscription**
+  (no self-hosting, near-automatic setup)
 - [ ] Per-site extraction tweaks / paywalled-content handling
-- [ ] Localization
 - [ ] Cover image + multi-article "issues"
 
 ## Development
