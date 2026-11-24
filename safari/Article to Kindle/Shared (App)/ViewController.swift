@@ -15,6 +15,8 @@ typealias PlatformViewController = NSViewController
 #endif
 
 let extensionBundleIdentifier = "app.articletokindle.Extension"
+let appGroupIdentifier = "group.app.articletokindle"
+let settingsKeys = ["kindleEmail", "relayUrl", "relayToken"]
 
 class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMessageHandler {
 
@@ -55,6 +57,15 @@ class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMess
         let version = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? ""
         webView.evaluateJavaScript("if (window.setVersion) { setVersion('\(version)') }")
 
+        // Pre-fill the share-sheet delivery form with saved App Group values.
+        let defaults = UserDefaults(suiteName: appGroupIdentifier)
+        var settings: [String: String] = [:]
+        for key in settingsKeys { settings[key] = defaults?.string(forKey: key) ?? "" }
+        if let data = try? JSONSerialization.data(withJSONObject: settings),
+           let json = String(data: data, encoding: .utf8) {
+            webView.evaluateJavaScript("if (window.loadSettings) { loadSettings(\(json)) }")
+        }
+
 #if os(iOS)
         webView.evaluateJavaScript("show('ios')")
 #elseif os(macOS)
@@ -77,8 +88,18 @@ class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMess
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        // Save share-sheet delivery settings into the App Group (both platforms).
+        if let body = message.body as? [String: Any],
+           (body["type"] as? String) == "save-settings" {
+            let defaults = UserDefaults(suiteName: appGroupIdentifier)
+            for key in settingsKeys {
+                defaults?.set((body[key] as? String) ?? "", forKey: key)
+            }
+            return
+        }
+
 #if os(macOS)
-        if (message.body as! String != "open-preferences") {
+        guard let action = message.body as? String, action == "open-preferences" else {
             return
         }
 

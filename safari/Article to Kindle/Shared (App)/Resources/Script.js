@@ -32,3 +32,36 @@ function openPreferences() {
 
 var prefBtn = document.querySelector("button.open-preferences");
 if (prefBtn) prefBtn.addEventListener("click", openPreferences);
+
+// --- Share-sheet delivery settings (stored natively in the App Group) ---
+
+// Called by the native app on load to pre-fill the form.
+function loadSettings(s) {
+    s = s || {};
+    var k = document.getElementById("kindle");
+    var r = document.getElementById("relay");
+    var t = document.getElementById("token");
+    if (k) k.value = s.kindleEmail || "";
+    if (r) r.value = s.relayUrl || "";
+    if (t) t.value = s.relayToken || "";
+}
+
+var form = document.getElementById("settings");
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var payload = {
+            type: "save-settings",
+            kindleEmail: (document.getElementById("kindle").value || "").trim(),
+            relayUrl: (document.getElementById("relay").value || "").trim(),
+            relayToken: (document.getElementById("token").value || "").trim()
+        };
+        try { webkit.messageHandlers.controller.postMessage(payload); } catch (err) {}
+        var saved = document.getElementById("saved");
+        if (saved) {
+            saved.hidden = false;
+            clearTimeout(form._t);
+            form._t = setTimeout(function () { saved.hidden = true; }, 2200);
+        }
+    });
+}

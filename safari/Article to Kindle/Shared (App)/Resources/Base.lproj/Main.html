@@ -35,9 +35,24 @@
     </section>
 
     <section>
-      <h2>Delivery settings</h2>
-      <p>Pick <b>Download</b> or <b>Email</b>, and set your Kindle address and relay, <b>inside the extension</b>: open it from Safari and tap <b>Settings</b>. Email delivery needs a one-time, free setup:</p>
+      <h2>Share-sheet delivery</h2>
+      <p>These settings power <b>Share to Kindle</b> in the system <b>Share</b> menu — send an article from any app, not just Safari. It emails the EPUB to your Kindle, so it needs the one-time, free relay setup:</p>
       <p><a href="https://article-to-kindle.netlify.app/setup.html">Open the setup guide →</a></p>
+      <form id="settings" class="settings" novalidate>
+        <label for="kindle">Kindle address</label>
+        <input id="kindle" type="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="you_xxxx@kindle.com">
+        <label for="relay">Relay URL</label>
+        <input id="relay" type="url" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="https://your-site.netlify.app/.netlify/functions/send">
+        <label for="token">Relay token <span class="opt">(optional)</span></label>
+        <input id="token" type="text" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="if you set RELAY_TOKEN">
+        <button type="submit">Save</button>
+        <p id="saved" class="saved" hidden>✓ Saved</p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Safari toolbar button</h2>
+      <p>The <b>Article → Kindle</b> button in Safari’s toolbar has its own <b>Settings</b> (open the extension and tap <b>Settings</b>) — on macOS it can also download the EPUB instead of emailing it.</p>
     </section>
 
     <section class="about">

@@ -34,6 +34,18 @@ button:active { opacity: .7; }
 .about .row { display: block; padding: 12px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin: 8px 0; color: var(--fg); }
 .about .row:active { opacity: .6; }
 .about .row::after { content: "›"; float: right; color: var(--muted); }
+.settings { display: block; margin-top: 4px; }
+.settings label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 5px; }
+.settings .opt { font-weight: 400; color: var(--muted); }
+.settings input {
+  width: 100%; box-sizing: border-box; font: 16px -apple-system, system-ui, sans-serif;
+  padding: 11px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--card); color: var(--fg); -webkit-appearance: none; -webkit-user-select: text; cursor: text;
+}
+.settings input:focus { outline: none; border-color: var(--accent); }
+.settings button { width: 100%; margin-top: 16px; }
+.saved { text-align: center; color: #16a34a; font-weight: 600; margin-top: 10px; }
+
 footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 22px; }
 
 /* platform / state visibility — driven by the native show() hook */

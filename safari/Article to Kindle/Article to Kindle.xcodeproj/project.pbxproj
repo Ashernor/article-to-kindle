@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2C7B7130B6220A00FEDD81 /* Share to Kindle.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5C2C7B6730B6220A00FEDD81 /* Share to Kindle.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5CCF1ADB303C37D000C7F664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF1ADA303C37D000C7F664 /* AppDelegate.swift */; };
 		5CCF1ADD303C37D000C7F664 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF1ADC303C37D000C7F664 /* SceneDelegate.swift */; };
 		5CCF1AE0303C37D000C7F664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF1ADE303C37D000C7F664 /* LaunchScreen.storyboard */; };
@@ -48,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5C2C7B6F30B6220A00FEDD81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CCF1AC4303C37CF00C7F664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C2C7B6630B6220A00FEDD81;
+			remoteInfo = "Share to Kindle";
+		};
 		5CCF1AF7303C37D000C7F664 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CCF1AC4303C37CF00C7F664 /* Project object */;
@@ -71,6 +79,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5C2C7B7130B6220A00FEDD81 /* Share to Kindle.appex in Embed Foundation Extensions */,
 				5CCF1AF6303C37D000C7F664 /* Article to Kindle Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -90,6 +99,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5C2C7B6730B6220A00FEDD81 /* Share to Kindle.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Share to Kindle.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2C7B7730B6227300FEDD81 /* Article to Kindle Extension (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Article to Kindle Extension (macOS).entitlements"; sourceTree = "<group>"; };
+		5C2C7B7830B6227E00FEDD81 /* Article to Kindle Extension (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Article to Kindle Extension (iOS).entitlements"; sourceTree = "<group>"; };
+		5C2C7B7930B6228B00FEDD81 /* Article to Kindle (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Article to Kindle (macOS).entitlements"; sourceTree = "<group>"; };
+		5C2C7B7A30B6229400FEDD81 /* Article to Kindle (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Article to Kindle (iOS).entitlements"; sourceTree = "<group>"; };
 		5CCF1ACB303C37CF00C7F664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
 		5CCF1ACC303C37CF00C7F664 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		5CCF1ACD303C37CF00C7F664 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
@@ -121,7 +135,35 @@
 		5CCF1B2B303C37D100C7F664 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = Resources/src; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5C2C7B7430B6220B00FEDD81 /* Exceptions for "Share to Kindle" folder in "Share to Kindle" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5C2C7B6630B6220A00FEDD81 /* Share to Kindle */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		5C2C7B6830B6220A00FEDD81 /* Share to Kindle */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5C2C7B7430B6220B00FEDD81 /* Exceptions for "Share to Kindle" folder in "Share to Kindle" target */,
+			);
+			path = "Share to Kindle";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		5C2C7B6430B6220A00FEDD81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CCF1AD4303C37D000C7F664 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,12 +198,17 @@
 		5CCF1AC3303C37CF00C7F664 = {
 			isa = PBXGroup;
 			children = (
+				5C2C7B7A30B6229400FEDD81 /* Article to Kindle (iOS).entitlements */,
+				5C2C7B7930B6228B00FEDD81 /* Article to Kindle (macOS).entitlements */,
+				5C2C7B7830B6227E00FEDD81 /* Article to Kindle Extension (iOS).entitlements */,
+				5C2C7B7730B6227300FEDD81 /* Article to Kindle Extension (macOS).entitlements */,
 				5CCF1AC8303C37CF00C7F664 /* Shared (App) */,
 				5CCF1AD1303C37D000C7F664 /* Shared (Extension) */,
 				5CCF1AD9303C37D000C7F664 /* iOS (App) */,
 				5CCF1AEA303C37D000C7F664 /* macOS (App) */,
 				5CCF1AF9303C37D000C7F664 /* iOS (Extension) */,
 				5CCF1B03303C37D000C7F664 /* macOS (Extension) */,
+				5C2C7B6830B6220A00FEDD81 /* Share to Kindle */,
 				5CCF1AD8303C37D000C7F664 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -203,6 +250,7 @@
 				5CCF1AE9303C37D000C7F664 /* Article to Kindle.app */,
 				5CCF1AF5303C37D000C7F664 /* Article to Kindle Extension.appex */,
 				5CCF1AFF303C37D000C7F664 /* Article to Kindle Extension.appex */,
+				5C2C7B6730B6220A00FEDD81 /* Share to Kindle.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +312,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5C2C7B6630B6220A00FEDD81 /* Share to Kindle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C2C7B7530B6220B00FEDD81 /* Build configuration list for PBXNativeTarget "Share to Kindle" */;
+			buildPhases = (
+				5C2C7B6330B6220A00FEDD81 /* Sources */,
+				5C2C7B6430B6220A00FEDD81 /* Frameworks */,
+				5C2C7B6530B6220A00FEDD81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5C2C7B6830B6220A00FEDD81 /* Share to Kindle */,
+			);
+			name = "Share to Kindle";
+			packageProductDependencies = (
+			);
+			productName = "Share to Kindle";
+			productReference = 5C2C7B6730B6220A00FEDD81 /* Share to Kindle.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5CCF1AD6303C37D000C7F664 /* Article to Kindle (iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CCF1B19303C37D000C7F664 /* Build configuration list for PBXNativeTarget "Article to Kindle (iOS)" */;
@@ -277,6 +347,7 @@
 			);
 			dependencies = (
 				5CCF1AF8303C37D000C7F664 /* PBXTargetDependency */,
+				5C2C7B7030B6220A00FEDD81 /* PBXTargetDependency */,
 			);
 			name = "Article to Kindle (iOS)";
 			packageProductDependencies = (
@@ -351,9 +422,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2660;
+				LastSwiftUpdateCheck = 2720;
 				LastUpgradeCheck = 2660;
 				TargetAttributes = {
+					5C2C7B6630B6220A00FEDD81 = {
+						CreatedOnToolsVersion = 27.2;
+					};
 					5CCF1AD6303C37D000C7F664 = {
 						CreatedOnToolsVersion = 26.6;
 					};
@@ -386,11 +460,19 @@
 				5CCF1AE8303C37D000C7F664 /* Article to Kindle (macOS) */,
 				5CCF1AF4303C37D000C7F664 /* Article to Kindle Extension (iOS) */,
 				5CCF1AFE303C37D000C7F664 /* Article to Kindle Extension (macOS) */,
+				5C2C7B6630B6220A00FEDD81 /* Share to Kindle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5C2C7B6530B6220A00FEDD81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CCF1AD5303C37D000C7F664 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,6 +533,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5C2C7B6330B6220A00FEDD81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CCF1AD3303C37D000C7F664 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -489,6 +578,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5C2C7B7030B6220A00FEDD81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C2C7B6630B6220A00FEDD81 /* Share to Kindle */;
+			targetProxy = 5C2C7B6F30B6220A00FEDD81 /* PBXContainerItemProxy */;
+		};
 		5CCF1AF8303C37D000C7F664 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5CCF1AF4303C37D000C7F664 /* Article to Kindle Extension (iOS) */;
@@ -537,6 +631,71 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5C2C7B7230B6220B00FEDD81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Share to Kindle/Share to Kindle.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = EL4FUTBSH4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Share to Kindle/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Share to Kindle";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.articletokindle.Share-to-Kindle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C2C7B7330B6220B00FEDD81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Share to Kindle/Share to Kindle.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = EL4FUTBSH4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Share to Kindle/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Share to Kindle";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.articletokindle.Share-to-Kindle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		5CCF1B13303C37D000C7F664 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -654,8 +813,9 @@
 		5CCF1B16303C37D000C7F664 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Article to Kindle Extension (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EL4FUTBSH4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
@@ -667,13 +827,14 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle.Extension;
 				PRODUCT_NAME = "Article to Kindle Extension";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -688,8 +849,9 @@
 		5CCF1B17303C37D000C7F664 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Article to Kindle Extension (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EL4FUTBSH4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
@@ -701,13 +863,14 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle.Extension;
 				PRODUCT_NAME = "Article to Kindle Extension";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -726,8 +889,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Article to Kindle (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EL4FUTBSH4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (App)/Info.plist";
@@ -742,7 +906,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -751,6 +915,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle;
 				PRODUCT_NAME = "Article to Kindle";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -772,8 +937,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Article to Kindle (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EL4FUTBSH4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (App)/Info.plist";
@@ -788,7 +954,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -797,6 +963,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle;
 				PRODUCT_NAME = "Article to Kindle";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -816,8 +983,9 @@
 		5CCF1B1D303C37D000C7F664 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Article to Kindle Extension (macOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EL4FUTBSH4;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -832,13 +1000,14 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle.Extension;
 				PRODUCT_NAME = "Article to Kindle Extension";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -852,8 +1021,9 @@
 		5CCF1B1E303C37D000C7F664 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Article to Kindle Extension (macOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EL4FUTBSH4;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -868,13 +1038,14 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.articletokindle.Extension;
 				PRODUCT_NAME = "Article to Kindle Extension";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -891,8 +1062,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Article to Kindle (macOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EL4FUTBSH4;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -909,7 +1081,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -935,8 +1107,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Article to Kindle (macOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EL4FUTBSH4;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -953,7 +1126,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -976,6 +1149,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5C2C7B7530B6220B00FEDD81 /* Build configuration list for PBXNativeTarget "Share to Kindle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2C7B7230B6220B00FEDD81 /* Debug */,
+				5C2C7B7330B6220B00FEDD81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5CCF1AC7303C37CF00C7F664 /* Build configuration list for PBXProject "Article to Kindle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
