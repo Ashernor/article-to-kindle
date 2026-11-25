@@ -84,9 +84,25 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
             return
         }
 
+        // Speed up loading image-heavy pages: stop the WebView from downloading
+        // images/media/fonts just to render them. We only need the DOM for
+        // extraction; share.js re-fetches the images it embeds via fetch(),
+        // which is classified as "raw" and is not matched by this rule.
+        let blockRules = """
+        [{"trigger":{"url-filter":".*","resource-type":["image","media","font"]},"action":{"type":"block"}}]
+        """
+        WKContentRuleListStore.default()?.compileContentRuleList(
+            forIdentifier: "atk-block-media", encodedContentRuleList: blockRules
+        ) { [weak self] ruleList, _ in
+            self?.launch(url: url, js: js, ruleList: ruleList)
+        }
+    }
+
+    private func launch(url: URL, js: String, ruleList: WKContentRuleList?) {
         let config = WKWebViewConfiguration()
         let userScript = WKUserScript(source: js, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
         config.userContentController.addUserScript(userScript)
+        if let ruleList = ruleList { config.userContentController.add(ruleList) }
 
         let wv = WKWebView(frame: .zero, configuration: config)
         wv.navigationDelegate = self
@@ -145,12 +161,17 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
 
     private func succeed(_ message: String) {
         spinner.stopAnimating()
+        spinner.isHidden = true
         icon.text = "✓"
         icon.textColor = .systemGreen
         icon.isHidden = false
+        title_.text = "Sent to your Kindle"
         status.text = message
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.isHidden = false
         tearDownWebView()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) { [weak self] in
+        // Auto-dismiss, but give it long enough to be read after a slow build.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
             self?.extensionContext?.completeRequest(returningItems: nil)
         }
     }
