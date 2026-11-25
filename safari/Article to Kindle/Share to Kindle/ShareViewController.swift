@@ -47,25 +47,53 @@ class ShareViewController: UIViewController, WKNavigationDelegate {
     // MARK: - Input URL
 
     private func loadSharedURL() {
-        guard let item = extensionContext?.inputItems.first as? NSExtensionItem,
-              let providers = item.attachments else {
-            fail("Nothing to share.")
-            return
-        }
+        let items = (extensionContext?.inputItems as? [NSExtensionItem]) ?? []
+        let providers = items.flatMap { $0.attachments ?? [] }
+        guard !providers.isEmpty else { fail("Nothing to share."); return }
+
         let urlType = UTType.url.identifier
-        for provider in providers where provider.hasItemConformingToTypeIdentifier(urlType) {
-            provider.loadItem(forTypeIdentifier: urlType, options: nil) { [weak self] (data, _) in
+        // Preferred: a proper web URL attachment (Safari and most browsers).
+        if let p = providers.first(where: { $0.hasItemConformingToTypeIdentifier(urlType) }) {
+            p.loadItem(forTypeIdentifier: urlType, options: nil) { [weak self] (data, _) in
                 DispatchQueue.main.async {
                     if let url = data as? URL, url.scheme?.hasPrefix("http") == true {
                         self?.start(url: url)
                     } else {
-                        self?.fail("Share a web page to send it to your Kindle.")
+                        self?.tryText(providers)   // some apps hand us a URL-less item
+                    }
+                }
+            }
+            return
+        }
+        // Fallback: a text item that contains a link (e.g. "Title — https://…"),
+        // which is how some native news apps share an article.
+        tryText(providers)
+    }
+
+    private func tryText(_ providers: [NSItemProvider]) {
+        let textType = UTType.plainText.identifier
+        if let p = providers.first(where: { $0.hasItemConformingToTypeIdentifier(textType) }) {
+            p.loadItem(forTypeIdentifier: textType, options: nil) { [weak self] (data, _) in
+                DispatchQueue.main.async {
+                    if let text = data as? String, let url = ShareViewController.firstLink(in: text) {
+                        self?.start(url: url)
+                    } else {
+                        self?.fail("No web link found in what you shared. Open the article in a browser and share it from there.")
                     }
                 }
             }
             return
         }
         fail("Share a web page to send it to your Kindle.")
+    }
+
+    private static func firstLink(in text: String) -> URL? {
+        guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) else { return nil }
+        let range = NSRange(text.startIndex..., in: text)
+        for m in detector.matches(in: text, options: [], range: range) {
+            if let u = m.url, let s = u.scheme?.lowercased(), s == "http" || s == "https" { return u }
+        }
+        return nil
     }
 
     // MARK: - Pipeline
