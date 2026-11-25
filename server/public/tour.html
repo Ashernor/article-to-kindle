@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Email setup — Article to Kindle</title>
+<meta name="description" content="A guided, step-by-step walkthrough for setting up email delivery to your Kindle: deploy a relay, approve your sender on Amazon, and send your first article." />
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#ffffff; --fg:#17171a; --muted:#6b7280; --border:#e6e6ea; --card:#f7f7f9;
+    --card2:#eff0f3; --accent:#d97706; --accent-weak:#fff3e2; --good:#16a34a; --shadow:0 18px 50px -24px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#111113; --fg:#f2f2f7; --muted:#9ca3af; --border:#2a2a2e; --card:#1a1a1d; --card2:#232327; --accent:#f59e0b; --accent-weak:#2a2112; --shadow:0 18px 50px -20px rgba(0,0,0,.7); }
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; }
+  body{
+    font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--bg); color:var(--fg);
+    min-height:100vh; -webkit-text-size-adjust:100%;
+    padding:calc(18px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom));
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .top{ width:100%; max-width:620px; display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px; }
+  .brand{ display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:-.2px; }
+  .brand img{ width:28px; height:28px; }
+  .brand a{ color:inherit; text-decoration:none; }
+  .lang{ display:inline-flex; border:1px solid var(--border); border-radius:999px; overflow:hidden; background:var(--card); }
+  .lang button{ border:0; background:none; color:var(--muted); font:600 13px system-ui; padding:7px 13px; cursor:pointer; }
+  .lang button[aria-pressed="true"]{ background:var(--accent); color:#fff; }
+
+  .stage{ width:100%; max-width:620px; }
+  .progress{ display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .bar{ flex:1; height:6px; border-radius:999px; background:var(--card2); overflow:hidden; }
+  .bar > i{ display:block; height:100%; width:0; background:var(--accent); border-radius:999px; transition:width .45s cubic-bezier(.4,0,.2,1); }
+  .count{ font:600 13px system-ui; color:var(--muted); white-space:nowrap; }
+
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow);
+    padding:26px 24px 22px; min-height:360px; display:flex; flex-direction:column;
+  }
+  .badge{ align-self:flex-start; font:700 12px system-ui; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); background:var(--accent-weak); padding:5px 11px; border-radius:999px; margin-bottom:14px; }
+  .card h2{ font-size:23px; line-height:1.25; margin:0 0 10px; letter-spacing:-.4px; }
+  .card .body{ color:var(--fg); }
+  .card .body p{ margin:0 0 12px; }
+  .card .body .muted{ color:var(--muted); }
+  .anim{ animation:rise .4s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes rise{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+
+  a{ color:var(--accent); }
+  code{ background:var(--card2); border:1px solid var(--border); padding:1px 6px; border-radius:6px; font-size:13px; }
+  .btn{ display:inline-block; padding:10px 18px; border-radius:10px; background:var(--accent); color:#fff; font-weight:600; text-decoration:none; }
+  .pill-links a{ display:inline-block; margin:2px 6px 2px 0; padding:4px 10px; border:1px solid var(--border); border-radius:999px; background:var(--card2); text-decoration:none; font-size:14px; }
+  .kvs{ margin:4px 0 0; padding:0; list-style:none; }
+  .kvs li{ padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:10px; }
+  .kvs li:last-child{ border-bottom:0; }
+  .kvs .k{ min-width:92px; color:var(--muted); font-size:14px; }
+  .note{ background:var(--accent-weak); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:10px; padding:11px 14px; font-size:14.5px; margin:4px 0 0; }
+
+  /* stylised browser mock */
+  .mock{ margin:6px 0 2px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg); box-shadow:var(--shadow); }
+  .mock .chrome{ display:flex; align-items:center; gap:6px; padding:9px 12px; background:var(--card2); border-bottom:1px solid var(--border); }
+  .mock .chrome i{ width:10px; height:10px; border-radius:50%; background:#d1d1d6; display:inline-block; }
+  .mock .chrome .url{ flex:1; margin-left:8px; font:12px system-ui; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-radius:6px; padding:4px 10px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+  .mock .page{ padding:16px; }
+  .mock h4{ margin:0 0 4px; font-size:14px; }
+  .mock .sub{ color:var(--muted); font-size:12.5px; margin:0 0 12px; }
+  .mock .field{ display:flex; gap:8px; align-items:center; margin:8px 0; }
+  .mock .input{ flex:1; border:1px solid var(--border); border-radius:7px; padding:8px 10px; font-size:13px; background:var(--bg); color:var(--fg); }
+  .mock .input.filled{ color:var(--fg); }
+  .mock .mbtn{ background:var(--accent); color:#fff; border:0; border-radius:7px; padding:8px 14px; font:600 13px system-ui; }
+  .mock .row{ display:flex; justify-content:space-between; align-items:center; padding:9px 11px; border:1px solid var(--border); border-radius:8px; margin:6px 0; font-size:13px; background:var(--card); }
+  .mock .mono{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  .hl{ position:relative; }
+  .hl::after{ content:""; position:absolute; inset:-5px -7px; border:2px solid var(--accent); border-radius:10px; animation:pulse 1.4s ease-in-out infinite; pointer-events:none; }
+  @keyframes pulse{ 0%,100%{ opacity:.35; } 50%{ opacity:1; } }
+  .callout{ display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:13.5px; font-weight:600; color:var(--accent); }
+  .callout svg{ width:16px; height:16px; }
+
+  .nav{ display:flex; align-items:center; justify-content:space-between; margin-top:20px; gap:12px; }
+  .nav .dots{ display:flex; gap:6px; flex-wrap:wrap; }
+  .nav .dots b{ width:7px; height:7px; border-radius:50%; background:var(--card2); border:1px solid var(--border); cursor:pointer; }
+  .nav .dots b.on{ background:var(--accent); border-color:var(--accent); }
+  .nav button.move{ border:1px solid var(--border); background:var(--card); color:var(--fg); font:600 15px system-ui; padding:11px 20px; border-radius:11px; cursor:pointer; }
+  .nav button.move.primary{ background:var(--accent); color:#fff; border-color:var(--accent); }
+  .nav button.move:disabled{ opacity:.4; cursor:default; }
+  .foot{ text-align:center; color:var(--muted); font-size:12.5px; margin-top:18px; }
+  .foot a{ color:var(--muted); }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand"><img src="data:image/png;base64,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" alt="" /><a href="/">Article to Kindle</a></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en" aria-pressed="true">EN</button>
+      <button data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="progress"><div class="bar"><i id="bar"></i></div><span class="count" id="count"></span></div>
+    <div class="card">
+      <span class="badge" id="badge"></span>
+      <div class="body" id="body"></div>
+      <div class="nav">
+        <button class="move" id="back"></button>
+        <div class="dots" id="dots"></div>
+        <button class="move primary" id="next"></button>
+      </div>
+    </div>
+    <p class="foot"><a href="/setup.html" id="footlink"></a></p>
+  </div>
+
+<script>
+(function(){
+  // Shared bits reused across locales
+  var LINKS = '<span class="pill-links">'
+    + '<a href="https://www.amazon.com/hz/mycd/digital-console/alldevices" target="_blank" rel="noopener">.com</a>'
+    + '<a href="https://www.amazon.co.uk/hz/mycd/digital-console/alldevices" target="_blank" rel="noopener">.co.uk</a>'
+    + '<a href="https://www.amazon.fr/hz/mycd/digital-console/alldevices" target="_blank" rel="noopener">.fr</a>'
+    + '<a href="https://www.amazon.de/hz/mycd/digital-console/alldevices" target="_blank" rel="noopener">.de</a>'
+    + '<a href="https://www.amazon.ca/hz/mycd/digital-console/alldevices" target="_blank" rel="noopener">.ca</a>'
+    + '<a href="https://www.amazon.co.jp/hz/mycd/digital-console/alldevices" target="_blank" rel="noopener">.co.jp</a>'
+    + '</span>';
+
+  function amazonMock(labels){
+    return '<div class="mock">'
+      + '<div class="chrome"><i></i><i></i><i></i><span class="url">amazon · '+labels.url+'</span></div>'
+      + '<div class="page">'
+      + '<h4>'+labels.h+'</h4><p class="sub">'+labels.sub+'</p>'
+      + '<div class="hl"><div class="field"><input class="input filled" value="sender@yourmail.com" readonly><button class="mbtn">'+labels.add+'</button></div></div>'
+      + '<div class="callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'+labels.callout+'</div>'
+      + '</div></div>';
+  }
+  function kindleMock(labels){
+    return '<div class="mock">'
+      + '<div class="chrome"><i></i><i></i><i></i><span class="url">amazon · '+labels.url+'</span></div>'
+      + '<div class="page">'
+      + '<h4>'+labels.h+'</h4><p class="sub">'+labels.sub+'</p>'
+      + '<div class="hl"><div class="row"><span>'+labels.device+'</span><span class="mono">your_x9k2@kindle.com</span></div></div>'
+      + '<div class="callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'+labels.callout+'</div>'
+      + '</div></div>';
+  }
+
+  var STEPS = {
+    en: [
+      { badge:"Email delivery", title:"Send articles straight to your Kindle",
+        body:"<p>By default the app just downloads the EPUB. <b>Email delivery</b> sends it to your Kindle automatically. It takes about <b>10 minutes to set up once</b> — then every article is one tap away.</p>"
+        +"<p class='muted'>You'll do three things: host a tiny free relay, approve your sender on Amazon, and paste two values into the app.</p>"
+        +"<div class='note'><b>Private by design.</b> The relay runs in <i>your</i> account and forwards the EPUB through <i>your</i> mailbox. Nothing ever reaches the developer.</div>" },
+      { badge:"Step 1 · Relay", title:"Deploy your free relay on Netlify",
+        body:"<p>Browsers can't send email, so a tiny relay does it. One click deploys your own copy:</p>"
+        +"<p><a class='btn' href='https://app.netlify.com/start/deploy?repository=https://github.com/Ashernor/article-to-kindle' target='_blank' rel='noopener'>Deploy to Netlify</a></p>"
+        +"<p class='muted'>It reads the project's <code>netlify.toml</code> (base directory <code>server</code>). You'll get a URL like <code>your-site.netlify.app</code>.</p>" },
+      { badge:"Step 2 · Mailbox", title:"Create an email app password",
+        body:"<p>The relay sends through your mailbox, so it needs an <b>app password</b> — never your normal login password.</p>"
+        +"<ul class='kvs'>"
+        +"<li><span class='k'>Gmail</span><span><code>smtp.gmail.com</code> · 465 — <a href='https://myaccount.google.com/apppasswords' target='_blank' rel='noopener'>app passwords</a> (2FA on)</span></li>"
+        +"<li><span class='k'>Fastmail</span><span><code>smtp.fastmail.com</code> · 465 — Settings → Privacy &amp; Security → App Passwords (IMAP/SMTP)</span></li>"
+        +"<li><span class='k'>iCloud+</span><span><code>smtp.mail.me.com</code> · 587 — <a href='https://appleid.apple.com' target='_blank' rel='noopener'>appleid.apple.com</a></span></li>"
+        +"</ul>" },
+      { badge:"Step 3 · Relay config", title:"Set the environment variables",
+        body:"<p>In Netlify: <b>Site configuration → Environment variables</b> (scope: Functions). Add your mailbox details:</p>"
+        +"<ul class='kvs'>"
+        +"<li><span class='k'>SMTP_HOST</span><span class='mono'>smtp.gmail.com</span></li>"
+        +"<li><span class='k'>SMTP_PORT</span><span class='mono'>465</span></li>"
+        +"<li><span class='k'>SMTP_USER</span><span class='mono'>you@example.com</span></li>"
+        +"<li><span class='k'>SMTP_PASS</span><span class='mono'>your app password</span></li>"
+        +"<li><span class='k'>SMTP_FROM</span><span class='mono'>you@example.com</span></li>"
+        +"</ul>"
+        +"<div class='note'>Then <b>Deploys → Trigger deploy</b> — env changes only apply on a fresh deploy.</div>" },
+      { badge:"Step 4 · Amazon", title:"Approve your sender on Amazon",
+        intro:"This is the step people forget: Amazon <b>silently drops</b> documents from addresses it doesn't recognise.",
+        body:"<p>This is the step people forget — Amazon <b>silently drops</b> documents from unapproved addresses. Open your country's Amazon → <b>Manage Your Content and Devices → Preferences → Personal Document Settings</b>:</p>"
+        + LINKS
+        + amazonMock({ url:"Personal Document Settings", h:"Approved Personal Document E-mail List", sub:"Add a new approved e-mail address", add:"Add", callout:"Enter your SMTP_FROM address, then Add" }) },
+      { badge:"Step 5 · Amazon", title:"Copy your @kindle.com address",
+        body:"<p>On the same page, under <b>Send-to-Kindle E-Mail Settings</b>, copy your device's address. That's where articles are delivered.</p>"
+        + kindleMock({ url:"Personal Document Settings", h:"Send-to-Kindle E-Mail Settings", sub:"Each device has its own @kindle.com address", device:"Your Kindle", callout:"Copy this @kindle.com address" }) },
+      { badge:"Step 6 · App", title:"Enter the two values in the app",
+        body:"<p>Open <b>Article to Kindle</b> and fill the delivery settings:</p>"
+        +"<ul class='kvs'>"
+        +"<li><span class='k'>Kindle address</span><span>the <code>…@kindle.com</code> from step 5</span></li>"
+        +"<li><span class='k'>Relay URL</span><span><code>https://your-site.netlify.app/.netlify/functions/send</code></span></li>"
+        +"</ul>"
+        +"<p class='muted'>On iPhone you can also use <b>Share → Share to Kindle</b> from any app once this is set.</p>" },
+      { badge:"Done", title:"Send your first article 🎉",
+        body:"<p>Open any article, tap <b>Send to Kindle</b> (or Share → Share to Kindle), and it lands on your Kindle in a few minutes.</p>"
+        +"<div class='note'><b>Nothing arrived?</b> 9 times out of 10 the sender isn't on Amazon's approved list (step 4), or the Kindle address is mistyped (step 5).</div>" }
+    ],
+    fr: [
+      { badge:"Envoi par email", title:"Envoyez vos articles directement sur le Kindle",
+        body:"<p>Par défaut, l'app télécharge juste l'EPUB. L'<b>envoi par email</b> l'expédie automatiquement vers votre Kindle. Comptez <b>~10 minutes de configuration, une seule fois</b> — ensuite chaque article part en un geste.</p>"
+        +"<p class='muted'>Trois choses à faire : héberger un petit relais gratuit, approuver votre expéditeur sur Amazon, et coller deux valeurs dans l'app.</p>"
+        +"<div class='note'><b>Privé par conception.</b> Le relais tourne sur <i>votre</i> compte et transfère l'EPUB via <i>votre</i> boîte mail. Rien n'arrive jamais au développeur.</div>" },
+      { badge:"Étape 1 · Relais", title:"Déployez votre relais gratuit sur Netlify",
+        body:"<p>Les navigateurs ne savent pas envoyer d'email : un petit relais s'en charge. Un clic déploie votre propre copie :</p>"
+        +"<p><a class='btn' href='https://app.netlify.com/start/deploy?repository=https://github.com/Ashernor/article-to-kindle' target='_blank' rel='noopener'>Déployer sur Netlify</a></p>"
+        +"<p class='muted'>Il lit le <code>netlify.toml</code> du projet (dossier de base <code>server</code>). Vous obtenez une URL du type <code>votre-site.netlify.app</code>.</p>" },
+      { badge:"Étape 2 · Boîte mail", title:"Créez un mot de passe d'application",
+        body:"<p>Le relais envoie via votre boîte mail : il lui faut un <b>mot de passe d'application</b> — jamais votre mot de passe de connexion habituel.</p>"
+        +"<ul class='kvs'>"
+        +"<li><span class='k'>Gmail</span><span><code>smtp.gmail.com</code> · 465 — <a href='https://myaccount.google.com/apppasswords' target='_blank' rel='noopener'>mots de passe d'app</a> (2FA actif)</span></li>"
+        +"<li><span class='k'>Fastmail</span><span><code>smtp.fastmail.com</code> · 465 — Réglages → Confidentialité → App Passwords (IMAP/SMTP)</span></li>"
+        +"<li><span class='k'>iCloud+</span><span><code>smtp.mail.me.com</code> · 587 — <a href='https://appleid.apple.com' target='_blank' rel='noopener'>appleid.apple.com</a></span></li>"
+        +"</ul>" },
+      { badge:"Étape 3 · Config relais", title:"Renseignez les variables d'environnement",
+        body:"<p>Sur Netlify : <b>Site configuration → Environment variables</b> (scope : Functions). Ajoutez les infos de votre boîte :</p>"
+        +"<ul class='kvs'>"
+        +"<li><span class='k'>SMTP_HOST</span><span class='mono'>smtp.gmail.com</span></li>"
+        +"<li><span class='k'>SMTP_PORT</span><span class='mono'>465</span></li>"
+        +"<li><span class='k'>SMTP_USER</span><span class='mono'>vous@example.com</span></li>"
+        +"<li><span class='k'>SMTP_PASS</span><span class='mono'>votre mot de passe d'app</span></li>"
+        +"<li><span class='k'>SMTP_FROM</span><span class='mono'>vous@example.com</span></li>"
+        +"</ul>"
+        +"<div class='note'>Puis <b>Deploys → Trigger deploy</b> — les variables ne s'appliquent qu'au prochain déploiement.</div>" },
+      { badge:"Étape 4 · Amazon", title:"Approuvez votre expéditeur sur Amazon",
+        body:"<p>C'est l'étape qu'on oublie : Amazon <b>jette silencieusement</b> les documents venant d'adresses non approuvées. Ouvrez l'Amazon de votre pays → <b>Gérer votre contenu et vos appareils → Préférences → Paramètres des documents personnels</b> :</p>"
+        + LINKS
+        + amazonMock({ url:"Paramètres des documents personnels", h:"Liste des e-mails approuvés pour documents personnels", sub:"Ajouter une nouvelle adresse e-mail approuvée", add:"Ajouter", callout:"Saisissez votre adresse SMTP_FROM, puis Ajouter" }) },
+      { badge:"Étape 5 · Amazon", title:"Copiez votre adresse @kindle.com",
+        body:"<p>Sur la même page, sous <b>Paramètres e-mail Envoyer-vers-Kindle</b>, copiez l'adresse de votre appareil. C'est là que les articles arrivent.</p>"
+        + kindleMock({ url:"Paramètres des documents personnels", h:"Paramètres e-mail Envoyer-vers-Kindle", sub:"Chaque appareil a sa propre adresse @kindle.com", device:"Votre Kindle", callout:"Copiez cette adresse @kindle.com" }) },
+      { badge:"Étape 6 · App", title:"Entrez les deux valeurs dans l'app",
+        body:"<p>Ouvrez <b>Article to Kindle</b> et remplissez les réglages d'envoi :</p>"
+        +"<ul class='kvs'>"
+        +"<li><span class='k'>Adresse Kindle</span><span>le <code>…@kindle.com</code> de l'étape 5</span></li>"
+        +"<li><span class='k'>URL du relais</span><span><code>https://votre-site.netlify.app/.netlify/functions/send</code></span></li>"
+        +"</ul>"
+        +"<p class='muted'>Sur iPhone, une fois ceci réglé, vous pouvez aussi faire <b>Partager → Share to Kindle</b> depuis n'importe quelle app.</p>" },
+      { badge:"Terminé", title:"Envoyez votre premier article 🎉",
+        body:"<p>Ouvrez un article, touchez <b>Envoyer vers le Kindle</b> (ou Partager → Share to Kindle), et il arrive sur votre Kindle en quelques minutes.</p>"
+        +"<div class='note'><b>Rien n'est arrivé ?</b> 9 fois sur 10, l'expéditeur n'est pas dans la liste approuvée d'Amazon (étape 4), ou l'adresse Kindle est mal saisie (étape 5).</div>" }
+    ]
+  };
+
+  var UI = {
+    en:{ back:"Back", next:"Next", done:"Finish", of:"of", foot:"Prefer a plain reference page? Open the written guide →" },
+    fr:{ back:"Retour", next:"Suivant", done:"Terminer", of:"sur", foot:"Vous préférez une page de référence classique ? Ouvrir le guide écrit →" }
+  };
+
+  var lang = (navigator.language||"en").slice(0,2) === "fr" ? "fr" : "en";
+  try{ var saved = localStorage.getItem("atk_lang"); if(saved) lang = saved; }catch(e){}
+  var i = 0;
+
+  var elBadge=document.getElementById("badge"), elBody=document.getElementById("body"),
+      elBar=document.getElementById("bar"), elCount=document.getElementById("count"),
+      elBack=document.getElementById("back"), elNext=document.getElementById("next"),
+      elDots=document.getElementById("dots"), elFoot=document.getElementById("footlink");
+
+  function render(){
+    var steps = STEPS[lang], ui = UI[lang], s = steps[i];
+    document.documentElement.lang = lang;
+    elBadge.textContent = s.badge;
+    elBody.innerHTML = "<h2>"+s.title+"</h2>"+s.body;
+    elBody.classList.remove("anim"); void elBody.offsetWidth; elBody.classList.add("anim");
+    elBar.style.width = Math.round(((i+1)/steps.length)*100)+"%";
+    elCount.textContent = (i+1)+" "+ui.of+" "+steps.length;
+    elBack.textContent = ui.back; elBack.disabled = i===0;
+    elNext.textContent = i===steps.length-1 ? ui.done : ui.next;
+    elFoot.textContent = ui.foot;
+    elDots.innerHTML = "";
+    for(var d=0; d<steps.length; d++){
+      var b=document.createElement("b"); if(d===i) b.className="on";
+      b.setAttribute("data-i", d); elDots.appendChild(b);
+    }
+    document.querySelectorAll(".lang button").forEach(function(btn){
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-lang")===lang ? "true":"false");
+    });
+  }
+  function go(n){ var len=STEPS[lang].length; i=Math.max(0,Math.min(len-1,n)); render(); window.scrollTo({top:0,behavior:"smooth"}); }
+
+  elBack.onclick=function(){ go(i-1); };
+  elNext.onclick=function(){ if(i===STEPS[lang].length-1){ location.href="/"; } else go(i+1); };
+  elDots.onclick=function(e){ var t=e.target.closest("b"); if(t) go(+t.getAttribute("data-i")); };
+  document.querySelector(".lang").onclick=function(e){
+    var b=e.target.closest("button[data-lang]"); if(!b) return;
+    lang=b.getAttribute("data-lang"); try{ localStorage.setItem("atk_lang",lang); }catch(err){}
+    render();
+  };
+  document.addEventListener("keydown",function(e){ if(e.key==="ArrowRight") go(i+1); if(e.key==="ArrowLeft") go(i-1); });
+  render();
+})();
+</script>
+</body>
+</html>
